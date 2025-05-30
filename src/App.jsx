@@ -2,7 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import Dashboard from "./components/dashboard/dashboard";
-import AutomotiveSpice from "./components/v-modalpage/VModal";
+import VModal from "./components/v-modalpage/vmodal2";
+// import AutomotiveSpice from "./components/v-modalpage/VModal";
 
 function App() {
   
@@ -10,8 +11,8 @@ function App() {
   return (
     <>
       {/* < Dashboard/> */}
-      <AutomotiveSpice/>
-      
+      {/* <AutomotiveSpice/> */}
+      <VModal />
     </>
   );
 }

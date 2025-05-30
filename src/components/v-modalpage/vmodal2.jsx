@@ -1,258 +1,262 @@
-import { Box, Grid, Paper, Stack, styled, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  backgroundColor: "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: (theme.vars ?? theme).palette.text.secondary,
+  borderRadius: "8px",
+
+  width: "150px",
+  minHeight: "60px",
+  maxWidth: "150px",
+  whiteSpace: "normal",
+  wordWrap: "break-word",
+  overflowWrap: "break-word",
+  wordBreak: "break-word",
+}));
+
+const Item = ({ id, label }) => (
+  <StyledPaper elevation={2}>
+    <b>{id}</b>
+    <br />
+    {label}
+  </StyledPaper>
+);
+
+const SysBox = ({ id, label, style }) => (
+  <Box
+    sx={{
+      position: "absolute",
+      ...style,
+      transform: "translate(-50%, -50%)",
+    }}
+  >
+    <StyledPaper elevation={2}>
+      <b>{id}</b>
+      <br />
+      {label}
+    </StyledPaper>
+  </Box>
+);
 
 const VModal = () => {
-    const Item = styled(Paper)(({ theme}) => ({
-        backgroundColor: '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: (theme.vars ?? theme).palette.text.secondary,
-        ...theme.applyStyles('dark',{
-            backgroundColor: '#1A2027',
-        })
-    }));
-
-    const SysBox = ({ top, left, id, label }) => (
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        minHeight: "100vh",
+        padding: 4,
+        overflowX: "hidden",
+        boxSizing: "border-box",
+      }}
+    >
       <Box
         sx={{
-          position: "absolute",
-          top: top,
-          left: left,
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+          },
+          justifyContent: "center",
+          alignItems: {
+            xs: "center",
+            md: "flex-start",
+          },
+          gap: 1,
+          flexWrap: "nowrap",
         }}
       >
-        <Paper
-          elevation={1}
-          sx={{
-            padding: "10px ",
-            textAlign: "center",
-            borderRadius: "10px",
-            minWidth: "100px",
-            backgroundColor: "#fff",
-            fontSize: "14px",
-          }}
-        >
-          <b>{id}</b>
-          <br />
-          {label}
-        </Paper>
-      </Box>
-    );
-    return (
-      <div
-        sx={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
-      >
         <Box
           sx={{
-            position: "absolute",
-            top: "5%",
-            left: "5%",
-            width: "200px",
-            height: "500px",
-            justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-            flexWrap: "wrap",
-            padding: 1,
-            boxSizing: "border-box",
             backgroundColor: "#D7EAD8",
-          }}
-        >
-          <Grid
-            container
-            spacing={1}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              boxSizing: "border-box",
-            }}
-          >
-            <Grid size={{ xs: 6, md: 12 }}>
-              <b>Supporting Process Group (SUP)</b>
-            </Grid>
-            <Grid size={{ xs: 6, md: 12 }}>
-              <Item>
-                <b>SUP 1</b> <br /> Quality Assurance
-              </Item>
-            </Grid>
-            <Grid size={{ xs: 6, md: 12 }}>
-              <Item>
-                <b>SUP 2</b> <br /> configueration Management
-              </Item>
-            </Grid>
-            <Grid size={{ xs: 6, md: 12 }}>
-              <Item>
-                <b>SUP 3</b> <br /> Problem Resolution Management
-              </Item>
-            </Grid>
-            <Grid size={{ xs: 6, md: 12 }}>
-              <Item>
-                <b>SUP 4</b> <br /> Change Request Management
-              </Item>
-            </Grid>
-            <Grid size={{ xs: 6, md: 12 }}>
-              <Item>
-                <b>SUP 5</b> <br /> Machine Learning Data Management
-              </Item>
-            </Grid>
-          </Grid>
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            top: "5%",
-            left: "16%",
-            width: "720px",
-            height: "250px",
-            backgroundColor: "#f9d3b4",
-            padding: "20px",
-            overflow: "hidden",
+            padding: 2,
+            borderRadius: "5px",
+            width: {
+              xs: "70%",
+              md: "190px",
+            },
+            flexShrink: 0,
           }}
         >
           <Typography
-            variant="subtitle1"
+            variant="subtitle2"
+            fontWeight="bold"
+            mb={1}
+            textAlign="center"
+          >
+            Supporting Process Group (SUP)
+          </Typography>
+
+          <Grid container spacing={1} direction="column" alignItems="center">
+            {[
+              { id: "SUP 1", label: "Quality Assurance" },
+              { id: "SUP 2", label: "Configuration Management" },
+              { id: "SUP 3", label: "Problem Resolution Management" },
+              { id: "SUP 4", label: "Change Request Management" },
+              { id: "SUP 5", label: "Machine Learning Data Management" },
+            ].map((item, i) => (
+              <Grid item key={i}>
+                <Item id={item.id} label={item.label} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            backgroundColor: "#f9d3b4",
+            borderRadius: "5px",
+            padding: 2,
+            width: {
+              xs: "100%",
+              md: "550px",
+            },
+            height: {
+              xs: "auto",
+              md: "250px",
+            },
+            position: "relative",
+            overflowX: "auto",
+            flexShrink: 0,
+          }}
+        >
+          <Typography
+            variant="subtitle2"
             sx={{
+              position: "absolute",
+              top: "10px",
+              left: "50%",
+              transform: "translateX(-50%)",
               fontWeight: "bold",
               textAlign: "center",
-              marginBottom: "20px",
+              backgroundColor: "#f9d3b4",
+              px: 1,
             }}
           >
             System Engineering Process Group (SYS)
           </Typography>
 
           <SysBox
-            top="60px"
-            left="30px"
             id="SYS.1"
             label="Requirement Elicitation"
+            style={{ top: "26%", left: "16%" }}
           />
           <SysBox
-            top="130px"
-            left="90px"
             id="SYS.2"
             label="System Requirement Analysis"
+            style={{ top: "55%", left: "25%" }}
           />
           <SysBox
-            top="200px"
-            left="150px"
             id="SYS.3"
             label="System Architecture Design"
+            style={{ top: "83%", left: "40%" }}
           />
           <SysBox
-            top="200px"
-            left="360px"
             id="SYS.4"
             label="System Integration and Integration Verification"
+            style={{ top: "83%", left: "70%" }}
           />
           <SysBox
-            top="130px"
-            left="600px"
             id="SYS.5"
             label="System Verification"
+            style={{ top: "55%", left: "83%" }}
           />
         </Box>
         <Box
           sx={{
-            position: "absolute",
-            top: "5%",
-            left: "56%",
-            width: "180px",
-            height: "125px",
-            padding: "20px",
             backgroundColor: "#f9d3b4",
-            overflow: "hidden",
+            padding: 2,
+            borderRadius: "5px",
+            width: {
+              xs: "70%",
+              md: "150px",
+            },
+            height: {
+              xs: "auto",
+              md: "125px",
+            },
+            position: "relative",
+            // overflowX: "auto",
+            flexShrink: 0,
           }}
         >
           <Typography
-            variant="Subtitle1"
+            variant="subtitle2"
             sx={{
               fontWeight: "bold",
               textAlign: "center",
               marginBottom: "20px",
+              position: "absolute",
+              top: "10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
             }}
           >
             Validation Process Group (VAL)
           </Typography>
           <SysBox
-            top="70px"
-            left="50px"
-            id="VAL.1"
-            label=" Validation"
-          ></SysBox>
+            id="SYS.5"
+            label="System Verification"
+            style={{ top: "68%", left: "50%" }}
+          />
         </Box>
-
         <Box
           sx={{
-            position: "absolute",
-            top: "5%",
-            left: "68%",
-            width: "200px",
-            height: "250px",
-            padding: "20px",
             backgroundColor: "#C1CEE0",
-            overflow: "hidden",
+            padding: 2,
+            borderRadius: "5px",
+            width: {
+              xs: "70%",
+              md: "190px",
+            },
+            height: {
+              xs: "auto",
+              md: "250px",
+            },
+            position: "relative",
+            flexShrink: 0,
           }}
         >
           <Typography
-            variant="Subtitle1"
+            variant="subtitle2"
             sx={{
               fontWeight: "bold",
               textAlign: "center",
-              marginBottom: "20px",
+              marginBottom: "10px",
+              position: "absolute",
+              top: "5px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
             }}
           >
             Management Process Group (MAN)
           </Typography>
           <SysBox
-            top="65px"
-            left="38px"
             id="MAN.3"
             label="Project Management"
-          ></SysBox>
+            style={{ top: "29%", left: "50%" }}
+          />
           <SysBox
-            top="135px"
-            left="38px"
             id="MAN.5"
-            label="Risk Management"
-          ></SysBox>
+            label="Project Management"
+            style={{ top: "57%", left: "50%" }}
+          />
           <SysBox
-            top="203px"
-            left="38px"
             id="MAN.6"
-            label="Measurement"
-          ></SysBox>
+            label="Project Management"
+            style={{ top: "85%", left: "50%" }}
+          />
         </Box>
-        <Box 
-        sx={{
-          position: "absolute",
-          top: "36%",
-          left: "16%",
-          width: "450px",
-          height: "250px",
-          padding: "10px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}>
-          <Typography
-            variant="Subtitle1"
-            sx={{
-              fontWeight: "bold",
-              textAlign: "center",
-              marginBottom: "10px",
-            }}
-          >
-            Software Engineering Process Group (SWE)
-          </Typography>
-          <SysBox
-            top="70px"
-            left="20px"
-            id="SWE.1"
-            label="Software Requirement Analysis"
-          ></SysBox>
-        </Box>
-      </div>
-    );
-}
-export default VModal;
+      </Box>
+    </Box>
+  );
+};
 
+export default VModal;
