@@ -7,7 +7,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import React from "react";
 import { useMemo } from "react";
 
 const FinalModal = () => {
@@ -206,8 +205,132 @@ const FinalModal = () => {
             />
           </Box>
 
-          {/* Software Engineering Process Group (SWE) */}
           <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 1,
+            }}
+          >
+            {/* Software Engineering Process Group (SWE) */}
+            <Box
+              sx={{
+                backgroundColor: "#f9d3b4",
+                borderRadius: "5px",
+                p: 1,
+                width: isLaptop ? "319px" : "394px",
+                height: "240px",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Typography
+                variant="subtitle2"
+                fontWeight="bold"
+                textAlign="center"
+                sx={{ mb: 1 }}
+              >
+                Software Engineering Process Group (SWE)
+              </Typography>
+
+              <SysBox
+                id="SWE.1"
+                label="Software Requirements Analysis"
+                positions={{
+                  desktop: [26, 20],
+                  laptop: [26, 22],
+                }}
+              />
+              <SysBox
+                id="SWE.2"
+                label="Software Architectural Design"
+                positions={{
+                  desktop: [54, 25],
+                  laptop: [54, 25],
+                }}
+              />
+              <SysBox
+                id="SWE.3"
+                label="Software Details Design and Unit Construction"
+                positions={{
+                  desktop: [82, 30],
+                  laptop: [82, 30],
+                }}
+              />
+              <SysBox
+                id="SWE.4"
+                label="Software Unit Verification"
+                positions={{
+                  desktop: [85, 70],
+                  laptop: [85, 70],
+                }}
+              />
+              <SysBox
+                id="SWE.5"
+                label="Software Component Verification and Integration Verification"
+                positions={{
+                  desktop: [54, 75],
+                  laptop: [55, 75],
+                }}
+              />
+              <SysBox
+                id="SWE.6"
+                label="Software Varification"
+                positions={{
+                  desktop: [23, 80],
+                  laptop: [24, 80],
+                }}
+              />
+            </Box>
+
+            {/* New Hardware Engineering Process Group (HWE) */}
+            <Box
+              sx={{
+                backgroundColor: "#f9d3b4",
+                borderRadius: "5px",
+                p: 1,
+                width: isLaptop ? "319px" : "394px",
+                height: "240px",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Typography
+                variant="subtitle2"
+                fontWeight="bold"
+                textAlign="center"
+                sx={{ mb: 1 }}
+              >
+                Hardware Engineering Process Group (HWE)
+              </Typography>
+
+              <SysBox
+                id="HWE.1"
+                label="Hardware Requirements Definition"
+                positions={{
+                  desktop: [26, 20],
+                  laptop: [26, 22],
+                }}
+              />
+              <SysBox
+                id="HWE.2"
+                label="Hardware Design and Development"
+                positions={{
+                  desktop: [54, 25],
+                  laptop: [54, 25],
+                }}
+              />
+              <SysBox
+                id="HWE.3"
+                label="Hardware Verification and Testing"
+                positions={{
+                  desktop: [82, 30],
+                  laptop: [82, 30],
+                }}
+              />
+            </Box>
+          </Box>
+          {/* <Box
             sx={{
               backgroundColor: "#f9d3b4",
               borderRadius: "5px",
@@ -275,8 +398,7 @@ const FinalModal = () => {
                 laptop: [24, 80],
               }}
             />
-          </Box>
-          
+          </Box> */}
         </Box>
 
         {/* VAL Group */}
@@ -314,6 +436,8 @@ const FinalModal = () => {
             </StyledPaper>
           </Box>
         </Box>
+        
+        {/*Management Process Group (MAN)*/}
         <Box
           sx={{
             backgroundColor: "#C1CEE0",
@@ -358,7 +482,6 @@ const FinalModal = () => {
             }}
           />
         </Box>
-        
       </Box>
     </Box>
   );
