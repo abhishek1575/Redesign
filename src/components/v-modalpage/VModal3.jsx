@@ -89,8 +89,8 @@ const VModal3 = () => {
             backgroundColor: "#D7EAD8",
             p: 1,
             borderRadius: "5px",
-            minWidth: isMobile ? "80px" : isLaptop ? "100" : "120px",
-            height: "510px",
+            minWidth: isLaptop ? "100px" : "200px",
+            height: isLaptop ? "500px" : "550px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -137,7 +137,7 @@ const VModal3 = () => {
               backgroundColor: "#f9d3b4",
               borderRadius: "5px",
               p: 1,
-              width: isLaptop ? "425px" : "525px",
+              width: isLaptop ? "450px" : "600px",
               height: "250px",
               position: "relative",
               flexShrink: 0,
@@ -193,9 +193,6 @@ const VModal3 = () => {
               }}
             />
           </Box>
-          {/* new row added  */}
-          
-          
 
           {/* SWE + NEW */}
           <Box
@@ -214,8 +211,8 @@ const VModal3 = () => {
                 backgroundColor: "#f9d3b4",
                 borderRadius: "5px",
                 p: 1,
-                width: isLaptop ? "319px" : "394px",
-                height: "240px",
+                width: isLaptop ? "319px" : "410px",
+                height: "275px",
                 position: "relative",
                 flexShrink: 0,
               }}
@@ -271,22 +268,21 @@ const VModal3 = () => {
               />
               <SysBox
                 id="SWE.6"
-                label="Software Varification"
+                label="Software Verification"
                 positions={{
                   desktop: [23, 80],
                   laptop: [24, 80],
                 }}
               />
             </Box>
-
             {/* HWE */}
             <Box
               sx={{
                 backgroundColor: "#f9d3b4",
                 borderRadius: "5px",
                 p: 1,
-                width: isLaptop ? "260px" : "300px",
-                height: "240px",
+                width: isLaptop ? "285px" : "360px",
+                height: "270px",
                 position: "relative",
                 flexShrink: 0,
               }}
@@ -325,7 +321,6 @@ const VModal3 = () => {
                 }}
               />
             </Box>
-
             {/* PIM + REU */}
             <Box sx={{ display: "flex", flexDirection: "column", gap: 0.2 }}>
               <Box
@@ -334,7 +329,7 @@ const VModal3 = () => {
                   borderRadius: "5px",
                   p: 1,
                   width: isLaptop ? "160px" : "180px",
-                  height: "115px",
+                  height: "125px",
                 }}
               >
                 <Typography
@@ -358,7 +353,7 @@ const VModal3 = () => {
                   borderRadius: "5px",
                   p: 1,
                   width: isLaptop ? "160px" : "180px",
-                  height: "105px",
+                  height: "130px",
                 }}
               >
                 <Typography
@@ -374,6 +369,126 @@ const VModal3 = () => {
                   <br />
                   Management of Products for Reuse
                 </StyledPaper>
+              </Box>
+            </Box>
+            {/* New Extension Boxes */}
+
+            <Box
+              sx={{
+                position: "absolute",
+                top: "100%",
+                mt: 1, // adjusted to minimal gap
+                display: "flex",
+                flexDirection: "row",
+                gap: 1,
+              }}
+            >
+              {/* Machine Learning Engineering Process Group (MLE) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "480px" : "630px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Machine Learning Engineering Process Group (MLE)
+                </Typography>
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 8],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 24],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 40],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 56],
+                    laptop: [50, 10],
+                  }}
+                />
+              </Box>
+
+              {/* Acquisition Process Group (ACQ) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "125px" : "160px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Acquisition Process Group (ACQ)
+                </Typography>
+                <StyledPaper elevation={2}>
+                  <b>EXT.2</b>
+                  <br />
+                  New HWE Extension
+                </StyledPaper>
+              </Box>
+
+              {/* Supply Process Group (SPL) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "160px" : "160px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Supply Process Group(SPL)
+                </Typography>
+                <SysBox
+                  id="SPL.2"
+                  label="Software Unit Verification"
+                  positions={{
+                    desktop: [70, 91],
+                    laptop: [60, 90],
+                  }}
+                />
               </Box>
             </Box>
           </Box>
@@ -467,6 +582,7 @@ const VModal3 = () => {
 
 export default VModal3;
 
+
 // import {
 //   Box,
 //   Grid,
@@ -558,8 +674,8 @@ export default VModal3;
 //             backgroundColor: "#D7EAD8",
 //             p: 1,
 //             borderRadius: "5px",
-//             minWidth: isMobile ? "80px" : isLaptop ? "100" : "120px",
-//             height: "510px",
+//             minWidth: isLaptop ? "100px" : "200px",
+//             height: isLaptop ? "500px" : "550px",
 //             display: "flex",
 //             flexDirection: "column",
 //             alignItems: "center",
@@ -592,14 +708,21 @@ export default VModal3;
 //         </Box>
 
 //         {/* SYS + SWE/NEW */}
-//         <Box sx={{ position: "relative" }}>
+//         <Box
+//           sx={{
+//             position: "relative",
+//             gap: 1,
+//             display: "flex",
+//             flexDirection: "column",
+//           }}
+//         >
 //           {/* SYS */}
 //           <Box
 //             sx={{
 //               backgroundColor: "#f9d3b4",
 //               borderRadius: "5px",
 //               p: 1,
-//               width: isLaptop ? "425px" : "525px",
+//               width: isLaptop ? "450px" : "600px",
 //               height: "250px",
 //               position: "relative",
 //               flexShrink: 0,
@@ -667,13 +790,14 @@ export default VModal3;
 //               gap: 1,
 //             }}
 //           >
+//             {/* SWE */}
 //             <Box
 //               sx={{
 //                 backgroundColor: "#f9d3b4",
 //                 borderRadius: "5px",
 //                 p: 1,
-//                 width: isLaptop ? "319px" : "394px",
-//                 height: "240px",
+//                 width: isLaptop ? "319px" : "410px",
+//                 height: "275px",
 //                 position: "relative",
 //                 flexShrink: 0,
 //               }}
@@ -729,20 +853,20 @@ export default VModal3;
 //               />
 //               <SysBox
 //                 id="SWE.6"
-//                 label="Software Varification"
+//                 label="Software Verification"
 //                 positions={{
 //                   desktop: [23, 80],
 //                   laptop: [24, 80],
 //                 }}
 //               />
 //             </Box>
-
+//             {/* HWE */}
 //             <Box
 //               sx={{
 //                 backgroundColor: "#f9d3b4",
 //                 borderRadius: "5px",
 //                 p: 1,
-//                 width: isLaptop ? "260px" : "300px",
+//                 width: isLaptop ? "285px" : "360px",
 //                 height: "240px",
 //                 position: "relative",
 //                 flexShrink: 0,
@@ -782,7 +906,7 @@ export default VModal3;
 //                 }}
 //               />
 //             </Box>
-
+//             {/* PIM + REU */}
 //             <Box sx={{ display: "flex", flexDirection: "column", gap: 0.2 }}>
 //               <Box
 //                 sx={{
@@ -807,6 +931,7 @@ export default VModal3;
 //                   Process Improvement
 //                 </StyledPaper>
 //               </Box>
+//               {/* Reuse Process Group */}
 //               <Box
 //                 sx={{
 //                   backgroundColor: "#C1CEE0",
@@ -829,6 +954,126 @@ export default VModal3;
 //                   <br />
 //                   Management of Products for Reuse
 //                 </StyledPaper>
+//               </Box>
+//             </Box>
+//             {/* New Extension Boxes */}
+
+//             <Box
+//               sx={{
+//                 position: "absolute",
+//                 top: "100%",
+//                 mt: 1, // adjusted to minimal gap
+//                 display: "flex",
+//                 flexDirection: "row",
+//                 gap: 1,
+//               }}
+//             >
+//               {/* Machine Learning Engineering Process Group (MLE) */}
+//               <Box
+//                 sx={{
+//                   backgroundColor: "#D9EAD3",
+//                   borderRadius: "5px",
+//                   p: 1,
+//                   width: isLaptop ? "480px" : "590px",
+//                   height: "110px",
+//                   flexShrink: 0,
+//                 }}
+//               >
+//                 <Typography
+//                   variant="subtitle2"
+//                   fontWeight="bold"
+//                   textAlign="center"
+//                   sx={{ mb: 1 }}
+//                 >
+//                   Machine Learning Engineering Process Group (MLE)
+//                 </Typography>
+//                 <SysBox
+//                   id="MLE.5"
+//                   label="System Verification"
+//                   positions={{
+//                     desktop: [53, 8],
+//                     laptop: [50, 10],
+//                   }}
+//                 />
+//                 <SysBox
+//                   id="MLE.5"
+//                   label="System Verification"
+//                   positions={{
+//                     desktop: [53, 24],
+//                     laptop: [50, 10],
+//                   }}
+//                 />
+//                 <SysBox
+//                   id="MLE.5"
+//                   label="System Verification"
+//                   positions={{
+//                     desktop: [53, 40],
+//                     laptop: [50, 10],
+//                   }}
+//                 />
+//                 <SysBox
+//                   id="MLE.5"
+//                   label="System Verification"
+//                   positions={{
+//                     desktop: [53, 56],
+//                     laptop: [50, 10],
+//                   }}
+//                 />
+//               </Box>
+
+//               {/* Acquisition Process Group (ACQ) */}
+//               <Box
+//                 sx={{
+//                   backgroundColor: "#D9EAD3",
+//                   borderRadius: "5px",
+//                   p: 1,
+//                   width: isLaptop ? "125px" : "180px",
+//                   height: "110px",
+//                   flexShrink: 0,
+//                 }}
+//               >
+//                 <Typography
+//                   variant="subtitle2"
+//                   fontWeight="bold"
+//                   textAlign="center"
+//                   sx={{ mb: 1 }}
+//                 >
+//                   Acquisition Process Group (ACQ)
+//                 </Typography>
+//                 <StyledPaper elevation={2}>
+//                   <b>EXT.2</b>
+//                   <br />
+//                   New HWE Extension
+//                 </StyledPaper>
+//               </Box>
+
+//               {/* Supply Process Group (SPL) */}
+//               <Box
+//                 sx={{
+//                   backgroundColor: "#D9EAD3",
+//                   borderRadius: "5px",
+//                   p: 1,
+//                   width: isLaptop ? "160px" : "180px",
+//                   height: "110px",
+//                   flexShrink: 0,
+//                 }}
+//               >
+//                 <Typography
+//                   variant="subtitle2"
+//                   fontWeight="bold"
+//                   textAlign="center"
+//                   sx={{ mb: 1 }}
+//                 >
+//                   Supply Process Group(SPL)
+//                 </Typography>
+//                 <SysBox
+//                   id="SPL.2"
+//                   label="Software Unit Verification"
+//                   positions={{
+//                     desktop: [70, 90],
+//                     laptop: [60, 90],
+//                   }}
+//                 />
 //               </Box>
 //             </Box>
 //           </Box>
@@ -921,3 +1166,4 @@ export default VModal3;
 // };
 
 // export default VModal3;
+

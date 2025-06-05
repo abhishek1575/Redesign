@@ -1,540 +1,583 @@
-import React from "react";
-import { Box, Paper, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Paper,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import { styled } from "@mui/system";
+import { useMemo } from "react";
 
-// Custom styled Paper like 'Item'
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: (theme.vars ?? theme).palette.text.secondary,
-  borderRadius: "5px",
+const VModal3 = () => {
+  const theme = useTheme();
+  const isLaptop = useMediaQuery(theme.breakpoints.down("lg"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  width: "150px", // fixed width
-  minHeight: "60px", // default height
-  maxWidth: "150px", // optional for safety
-  wordWrap: "break-word",
-  whiteSpace: "normal", // allows wrapping
+  const { StyledPaper, SysPaper } = useMemo(() => {
+    const baseStyle = {
+      backgroundColor: "#fff",
+      textAlign: "center",
+      color: theme.palette.text.secondary,
+      borderRadius: "8px",
+      whiteSpace: "normal",
+      wordWrap: "break-word",
+      overflowWrap: "break-word",
+    };
 
-  overflowWrap: "break-word", // extra safety for long words
+    return {
+      StyledPaper: styled(Paper)(({ theme }) => ({
+        ...baseStyle,
+        padding: theme.spacing(1),
+        width: isMobile ? "100px" : isLaptop ? "120px" : "140px",
+        minHeight: "50px",
+        fontSize: isMobile ? "0.65rem" : "0.75rem",
+      })),
+      SysPaper: styled(Paper)(({ theme }) => ({
+        ...baseStyle,
+        padding: theme.spacing(1),
+        width: isLaptop ? "120px" : "140px",
+        minHeight: "50px",
+        fontSize: isLaptop ? "0.7rem" : "0.75rem",
+      })),
+    };
+  }, [isLaptop, isMobile, theme]);
 
-  ...theme.applyStyles?.("dark", {
-    backgroundColor: "#1A2027",
-  }),
-}));
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: "#fff",
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: "center",
-//   color: (theme.vars ?? theme).palette.text.secondary,
-//   borderRadius: "10px",
-//   minWidth: "120px",
-//   maxWidth: "150px",
-//   wordWrap: "break-word",
-//   whiteSpace: "normal",
-//   ...theme.applyStyles?.("dark", {
-//     backgroundColor: "#1A2027",
-//   }),
-// }));
-
-// Positionable Item Box
-const SysBox = ({ top, left, id, label }) => (
-  <Box sx={{ position: "absolute", top, left }}>
-    <Item elevation={1}>
+  const Item = ({ id, label }) => (
+    <StyledPaper elevation={2}>
       <b>{id}</b>
       <br />
       {label}
-    </Item>
-  </Box>
-);
+    </StyledPaper>
+  );
 
-const AutomotiveSpice = () => {
+  const SysBox = ({ id, label, positions }) => {
+    const [top, left] = positions[isLaptop ? "laptop" : "desktop"];
+
+    return (
+      <Box
+        sx={{
+          position: "absolute",
+          top: `${top}%`,
+          left: `${left}%`,
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <SysPaper elevation={2}>
+          <b>{id}</b>
+          <br />
+          {label}
+        </SysPaper>
+      </Box>
+    );
+  };
+
   return (
-    <div sx={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+    <Box sx={{ width: "100%", p: 1, boxSizing: "border-box" }}>
       <Box
         sx={{
-          position: "absolute",
-          top: "5%",
-          left: "5%",
-          width: "200px",
-          height: "500px",
-          justifyContent: "center",
           display: "flex",
-          flexDirection: "column",
-          flexWrap: "wrap",
-          padding: 1,
-          boxSizing: "border-box",
-          backgroundColor: "#D7EAD8",
+          flexDirection: "row",
+          gap: 1,
+          justifyContent: "center",
+          alignItems: "flex-start",
         }}
       >
-        <Typography
-          variant="subtitle1"
+        {/* SUP */}
+        <Box
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
+            backgroundColor: "#D7EAD8",
+            p: 1,
+            borderRadius: "5px",
+            minWidth: isLaptop ? "100px" : "200px",
+            height: isLaptop ? "500px" : "550px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            flexShrink: 0,
           }}
         >
-          Supporting Process Group (SUP)
-        </Typography>
+          <Typography
+            variant="subtitle2"
+            fontWeight="bold"
+            mb={1}
+            textAlign="center"
+          >
+            Supporting Process <br />
+            Group (SUP)
+          </Typography>
 
-        <SysBox
-          top="70px"
-          left="20px"
-          id="SUP.1"
-          label="Requirement Elicitation"
-        />
-        <SysBox
-          top="155px"
-          left="20px"
-          id="SUP.2"
-          label="System Requirement Analysis"
-        />
-        <SysBox
-          top="240px"
-          left="20px"
-          id="SUP.3"
-          label="System Architecture Design"
-        />
-        <SysBox
-          top="325px"
-          left="20px"
-          id="SUP.4"
-          label="System Integration and Verification"
-        />
-        <SysBox
-          top="410px"
-          left="20px"
-          id="SUP.5"
-          label="System Verification"
-        />
-      </Box>
+          <Grid container spacing={1} direction="column" alignItems="center">
+            {[
+              { id: "SUP 1", label: "Quality Assurance" },
+              { id: "SUP 2", label: "Configuration Management" },
+              { id: "SUP 3", label: "Problem Resolution Management" },
+              { id: "SUP 4", label: "Change Request Management" },
+              { id: "SUP 5", label: "Machine Learning Data Management" },
+            ].map((item, i) => (
+              <Grid item key={i} sx={{ width: "100%" }}>
+                <Item id={item.id} label={item.label} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
 
-      <Box
-        sx={{
-          position: "absolute",
-          top: "5%",
-          left: "16%",
-          width: "580px",
-          height: "250px",
-          backgroundColor: "#f9d3b4",
-          padding: "20px",
-          padding: "20px",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
+        {/* SYS + SWE/NEW */}
+        <Box
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
+            position: "relative",
+            gap: 1,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          Supporting Process Group (SUP)
-        </Typography>
-        {/* SYS Items positioned absolutely inside this box */}
-        <SysBox
-          top="45px"
-          left="30px"
-          id="SYS.1"
-          label="Requirement Elicitation"
-        />
-        <SysBox
-          top="125px"
-          left="90px"
-          id="SYS.2"
-          label="System Requirement Analysis"
-        />
-        <SysBox
-          top="205px"
-          left="150px"
-          id="SYS.3"
-          label="System Architecture Design"
-        />
-        <SysBox
-          top="205px"
-          left="360px"
-          id="SYS.4"
-          label="System Integration and Verification"
-        />
-        <SysBox
-          top="125px"
-          left="425px"
-          id="SUP.5"
-          label="System Verification"
-        />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "5%",
-          left: "49%",
-          width: "180px",
-          height: "125px",
-          padding: "20px",
-          backgroundColor: "#f9d3b4",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Validation Process Group (VAL)
-        </Typography>
-        <SysBox top="75px" left="30px" id="VAL.1" label=" Validation" />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "5%",
-          left: "61%",
-          width: "180px",
-          height: "250px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "5px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Management Process Group (MAN)
-        </Typography>
-        <SysBox top="55px" left="27px" id="MAN.3" label="Project Management" />
-        <SysBox
-          top="133px"
-          left="27px"
-          id="MAN.5"
-          label="System Verification"
-        />
-        <SysBox
-          top="210px"
-          left="27px"
-          id="MAN.5"
-          label="System Verification"
-        />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "36%",
-          left: "16%",
-          width: "420px",
-          height: "260px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Software Engineering Process Group (SWE)
-        </Typography>
-        <SysBox
-          top="35px"
-          left="10px"
-          id="SWE.1"
-          label="Software Requirements Analysis"
-        />
-        <SysBox
-          top="115px"
-          left="25px"
-          id="SWE.2"
-          label="Software Architecture Design"
-        />
-        <SysBox
-          top="195px"
-          left="55px"
-          id="SWE.3"
-          label="Software Details Design and Unit Construction"
-        />
-        <SysBox
-          top="215px"
-          left="230px"
-          id="SWE.4"
-          label="Software Unit Verification"
-        />
-        <SysBox
-          top="115px"
-          left="250px"
-          id="SWE.5"
-          label="Software Component Verification and Integration Verification"
-        />
-        <SysBox
-          top="35px"
-          left="280px"
-          id="SWE.6"
-          label="Software Verification"
-        />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "36%",
-          left: "775px",
-          width: "340px",
-          height: "260px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Hardware Engineering Process Group (HWE)
-        </Typography>
-        <SysBox
-          top="35px"
-          left="10px"
-          id="HWE.1"
-          label="Hardware Requirements Analysis"
-        />
-        <SysBox top="115px" left="25px" id="HWE.2" label="Hardware Design" />
+          {/* SYS */}
+          <Box
+            sx={{
+              backgroundColor: "#f9d3b4",
+              borderRadius: "5px",
+              p: 1,
+              width: isLaptop ? "450px" : "600px",
+              height: "250px",
+              position: "relative",
+              flexShrink: 0,
+            }}
+          >
+            <Typography
+              variant="subtitle2"
+              fontWeight="bold"
+              textAlign="center"
+              sx={{ mb: 1 }}
+            >
+              System Engineering Process Group (SYS)
+            </Typography>
 
-        <SysBox
-          top="115px"
-          left="195px"
-          id="HWE.3"
-          label="Varification against Hardware Design"
-        />
-        <SysBox
-          top="35px"
-          left="205px"
-          id="HWE.4"
-          label="Hardware Integration and Verification"
-        />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "36%",
-          left: "61%",
-          width: "180px",
-          height: "110px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Process Improvement Process Group (PIM)
-        </Typography>
-        <SysBox top="65px" left="27px" id="PIM.3" label="Process Improvement" />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "52%",
-          left: "61%",
-          width: "180px",
-          height: "110px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Reuse Process Group (REU)
-        </Typography>
-        <SysBox
-          top="55px"
-          left="27px"
-          id="REU.2"
-          label="Management of Products for Reuse"
-        />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "68%",
-          left: "61%",
-          width: "180px",
-          height: "110px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Supply Process Group (SPL)
-        </Typography>
-        <SysBox top="55px" left="27px" id="SPL.2" label="Product Relese" />
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "68%",
-          left: "965px",
-          width: "150px",
-          height: "110px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
-          }}
-        >
-          Acquisition Process Group (ACQ)
-        </Typography>
-        <SysBox top="60px" left="10px" id="ACQ.4" label="Supply Monitoring" />
-      </Box>
+            <SysBox
+              id="SYS.1"
+              label="Requirement Elicitation"
+              positions={{
+                desktop: [25, 18],
+                laptop: [25, 22],
+              }}
+            />
+            <SysBox
+              id="SYS.2"
+              label="System Requirement Analysis"
+              positions={{
+                desktop: [53, 25],
+                laptop: [50, 32],
+              }}
+            />
+            <SysBox
+              id="SYS.3"
+              label="System Architecture Design"
+              positions={{
+                desktop: [81, 35],
+                laptop: [75, 35],
+              }}
+            />
+            <SysBox
+              id="SYS.4"
+              label="System Integration and Verification"
+              positions={{
+                desktop: [81, 65],
+                laptop: [75, 67],
+              }}
+            />
+            <SysBox
+              id="SYS.5"
+              label="System Verification"
+              positions={{
+                desktop: [53, 80],
+                laptop: [50, 78],
+              }}
+            />
+          </Box>
 
-      <Box
-        sx={{
-          position: "absolute",
-          top: "68%",
-          left: "16%",
-          width: "610px",
-          height: "110px",
-          padding: "20px",
-          backgroundColor: "#C1CEE0",
-          overflow: "hidden",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
+          {/* SWE + NEW */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "100%",
+              mt: 1,
+              display: "flex",
+              flexDirection: "row",
+              gap: 1,
+            }}
+          >
+            {/* SWE */}
+            <Box
+              sx={{
+                backgroundColor: "#f9d3b4",
+                borderRadius: "5px",
+                p: 1,
+                width: isLaptop ? "319px" : "410px",
+                height: "275px",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Typography
+                variant="subtitle2"
+                fontWeight="bold"
+                textAlign="center"
+                sx={{ mb: 1 }}
+              >
+                Software Engineering Process Group (SWE)
+              </Typography>
+
+              <SysBox
+                id="SWE.1"
+                label="Software Requirements Analysis"
+                positions={{
+                  desktop: [26, 20],
+                  laptop: [26, 22],
+                }}
+              />
+              <SysBox
+                id="SWE.2"
+                label="Software Architectural Design"
+                positions={{
+                  desktop: [54, 25],
+                  laptop: [54, 25],
+                }}
+              />
+              <SysBox
+                id="SWE.3"
+                label="Software Details Design and Unit Construction"
+                positions={{
+                  desktop: [82, 30],
+                  laptop: [82, 30],
+                }}
+              />
+              <SysBox
+                id="SWE.4"
+                label="Software Unit Verification"
+                positions={{
+                  desktop: [85, 70],
+                  laptop: [85, 70],
+                }}
+              />
+              <SysBox
+                id="SWE.5"
+                label="Software Component Verification and Integration Verification"
+                positions={{
+                  desktop: [54, 75],
+                  laptop: [55, 75],
+                }}
+              />
+              <SysBox
+                id="SWE.6"
+                label="Software Verification"
+                positions={{
+                  desktop: [23, 80],
+                  laptop: [24, 80],
+                }}
+              />
+            </Box>
+            {/* HWE */}
+            <Box
+              sx={{
+                backgroundColor: "#f9d3b4",
+                borderRadius: "5px",
+                p: 1,
+                width: isLaptop ? "285px" : "360px",
+                height: "270px",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Typography
+                variant="subtitle2"
+                fontWeight="bold"
+                textAlign="center"
+                sx={{ mb: 1 }}
+              >
+                Hardware Engineering Process Group (HWE)
+              </Typography>
+
+              <SysBox
+                id="HWE.1"
+                label="Hardware Requirements Analysis"
+                positions={{
+                  desktop: [30, 26],
+                  laptop: [26, 22],
+                }}
+              />
+              <SysBox
+                id="HWE.2"
+                label="Hardware Design"
+                positions={{
+                  desktop: [65, 25],
+                  laptop: [65, 25],
+                }}
+              />
+              <SysBox
+                id="HWE.3"
+                label="Verification against HW Design"
+                positions={{
+                  desktop: [30, 76],
+                  laptop: [82, 30],
+                }}
+              />
+            </Box>
+            {/* PIM + REU */}
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 0.2 }}>
+              <Box
+                sx={{
+                  backgroundColor: "#C1CEE0",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "160px" : "180px",
+                  height: "125px",
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Process Improvement Process Group (PIM)
+                </Typography>
+                <StyledPaper elevation={2}>
+                  <b>PIM.3</b>
+                  <br />
+                  Process Improvement
+                </StyledPaper>
+              </Box>
+              {/* Reuse Process Group */}
+              <Box
+                sx={{
+                  backgroundColor: "#C1CEE0",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "160px" : "180px",
+                  height: "130px",
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Reuse Process Group (REU)
+                </Typography>
+                <StyledPaper elevation={2}>
+                  <b>REU.2</b>
+                  <br />
+                  Management of Products for Reuse
+                </StyledPaper>
+              </Box>
+            </Box>
+            {/* New Extension Boxes */}
+
+            <Box
+              sx={{
+                position: "absolute",
+                top: "100%",
+                mt: 1, // adjusted to minimal gap
+                display: "flex",
+                flexDirection: "row",
+                gap: 1,
+              }}
+            >
+              {/* Machine Learning Engineering Process Group (MLE) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "480px" : "630px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Machine Learning Engineering Process Group (MLE)
+                </Typography>
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 8],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 24],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 40],
+                    laptop: [50, 10],
+                  }}
+                />
+                <SysBox
+                  id="MLE.5"
+                  label="System Verification"
+                  positions={{
+                    desktop: [53, 56],
+                    laptop: [50, 10],
+                  }}
+                />
+              </Box>
+
+              {/* Acquisition Process Group (ACQ) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "125px" : "160px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Acquisition Process Group (ACQ)
+                </Typography>
+                <StyledPaper elevation={2}>
+                  <b>EXT.2</b>
+                  <br />
+                  New HWE Extension
+                </StyledPaper>
+              </Box>
+
+              {/* Supply Process Group (SPL) */}
+              <Box
+                sx={{
+                  backgroundColor: "#D9EAD3",
+                  borderRadius: "5px",
+                  p: 1,
+                  width: isLaptop ? "160px" : "160px",
+                  height: "110px",
+                  flexShrink: 0,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{ mb: 1 }}
+                >
+                  Supply Process Group(SPL)
+                </Typography>
+                <SysBox
+                  id="SPL.2"
+                  label="Software Unit Verification"
+                  positions={{
+                    desktop: [70, 91],
+                    laptop: [60, 90],
+                  }}
+                />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+
+        {/* VAL */}
+        <Box
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            position: "absolute",
-            top: "8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100%", // optional if you want full width
+            backgroundColor: "#f9d3b4",
+            p: 2,
+            borderRadius: "5px",
+            width: "155px",
+            height: "125px",
+            position: "relative",
+            flexShrink: 0,
           }}
         >
-          Machine Learning Process Group (MLE)
-        </Typography>
-        <SysBox
-          top="55px"
-          left="10px"
-          id="MLE.1"
-          label="Machine Learning Requirement Analysis"
-        />
-        <SysBox
-          top="55px"
-          left="180px"
-          id="MLE.2"
-          label="Machine Learning Architecture"
-        />
-        <SysBox
-          top="55px"
-          left="350px"
-          id="MLE.3"
-          label="Machine Learning Training"
-        />
-        <SysBox
-          top="55px"
-          left="520px"
-          id="MLE.4"
-          label="Machine Learning Model Testing"
-        />
+          <Typography
+            variant="subtitle2"
+            fontWeight="bold"
+            textAlign="center"
+            sx={{ mb: 1 }}
+          >
+            Validation Process Group (VAL)
+          </Typography>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "65%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <StyledPaper elevation={2}>
+              <b>VAL.1</b>
+              <br />
+              Validation
+            </StyledPaper>
+          </Box>
+        </Box>
+
+        {/* MAN */}
+        <Box
+          sx={{
+            backgroundColor: "#C1CEE0",
+            borderRadius: "5px",
+            p: 1,
+            width: isLaptop ? "160px" : "180px",
+            height: "250px",
+            position: "relative",
+            flexShrink: 0,
+          }}
+        >
+          <Typography
+            variant="subtitle2"
+            fontWeight="bold"
+            textAlign="center"
+            sx={{ mb: 1 }}
+          >
+            Management Process Group (MAN)
+          </Typography>
+          <SysBox
+            id="MAN.3"
+            label="Project Management"
+            positions={{
+              desktop: [32, 50],
+              laptop: [32, 50],
+            }}
+          />
+          <SysBox
+            id="MAN.5"
+            label="Risk Management"
+            positions={{
+              desktop: [59, 50],
+              laptop: [59, 50],
+            }}
+          />
+          <SysBox
+            id="MAN.6"
+            label="Measurement"
+            positions={{
+              desktop: [86, 50],
+              laptop: [86, 50],
+            }}
+          />
+        </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 
-export default AutomotiveSpice;
+export default VModal3;
