@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function DropDown() {
   const [openMenu, setOpenMenu] = useState(false);
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   return (
     <div className="flex justify-center bg-gray-100">
@@ -69,4 +69,3 @@ function DropDown() {
 }
 
 export default DropDown;
-
