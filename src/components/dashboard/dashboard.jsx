@@ -31,7 +31,7 @@ function Dashboard() {
             <CardMedia
               component="img"
               height="140"
-              image="/static/images/ASPICE.webp"
+              image="static/images/dashboard-Image/ASPICE.webp"
               alt="qms image"
             />
             <CardContent>
@@ -50,7 +50,7 @@ function Dashboard() {
             <CardMedia
               component="img"
               height="140"
-              image="/static/images/ISO-2622.jpg"
+              image="static/images/dashboard-Image/ISO-2622.jpg"
               alt="ISO-26262-image"
             />
             <CardContent>
@@ -69,7 +69,7 @@ function Dashboard() {
             <CardMedia
               component="img"
               height="140"
-              image="/static/images/CYBERSECURITY.jpg"
+              image="static\images\dashboard-Image\CYBERSECURITY.jpg"
               alt="cybersecurity-image"
             />
             <CardContent>
