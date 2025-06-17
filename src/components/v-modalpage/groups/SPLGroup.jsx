@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
 
-const SPLGroup = ({ SysPaper, isLaptop }) => (
+const SPLGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#D9EAD3",
@@ -11,6 +11,7 @@ const SPLGroup = ({ SysPaper, isLaptop }) => (
       height: "110px",
       position: "relative",
       flexShrink: 0,
+     
     }}
   >
     <Typography
@@ -24,10 +25,11 @@ const SPLGroup = ({ SysPaper, isLaptop }) => (
 
     <PositionedItem
       style={SysPaper}
-      positions={{ desktop: [65, 50], laptop: [60, 90] }}
+      positions={{ desktop: [65, 50], laptop: [65, 50] }}
       isLaptop={isLaptop}
       id="SPL.2"
       label="Product Release"
+      enabled={enabledProcessAreas.includes("SPL.2")}
     />
   </Box>
 );

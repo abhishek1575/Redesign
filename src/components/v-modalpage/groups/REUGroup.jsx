@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
 
-const REUGroup = ({ StyledPaper, isLaptop }) => (
+const REUGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#C1CEE0",
@@ -9,7 +9,7 @@ const REUGroup = ({ StyledPaper, isLaptop }) => (
       p: 1,
       width: isLaptop ? "160px" : "160px",
       height: "125px",
-      
+      position: "relative", // Needed for absolute positioning to work
     }}
   >
     <Typography
@@ -22,10 +22,11 @@ const REUGroup = ({ StyledPaper, isLaptop }) => (
     </Typography>
     <PositionedItem
       style={StyledPaper}
-      positions={{ desktop: [82, 91], laptop: [70, 40] }}
+      positions={{ desktop: [65, 50], laptop: [70, 30] }}
       isLaptop={isLaptop}
       id="REU.2"
       label="Management of Products for Reuse"
+      enabled={enabledProcessAreas.includes("REU.2")}
     />
   </Box>
 );

@@ -19,7 +19,7 @@ function DropDown() {
           className="w-full h-[100px] bg-white shadow-2xl backdrop-blur-md bg-opacity-80 px-4 py-3 rounded-2xl text-center text-2xl font-bold text-[#301A4B] cursor-pointer transition-transform duration-300 hover:scale-110 hover:bg-[#f0f0f0] flex items-center justify-center"
           onClick={() => setOpenMenu(!openMenu)}
         >
-          Tools in Automotive
+          Tools
         </div>
 
         {/* Dropdown options */}
@@ -49,7 +49,7 @@ function DropDown() {
             }}
             className="w-full h-[60px] bg-gradient-to-r from-pink-600 to-yellow-600 text-white text-center px-5 py-4 rounded-2xl shadow-lg cursor-pointer backdrop-blur-md bg-opacity-80 transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#301A4B] flex items-center justify-center text-lg"
           >
-            Medeni
+            Medini Analyser (Ansys)
           </div>
 
           {/* SVN */}

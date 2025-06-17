@@ -7,8 +7,15 @@ import {
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import DropDown from "./dropdown";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/aspice");
+  };
+
   return (
     <div
       style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
@@ -26,12 +33,12 @@ function Dashboard() {
         }}
       >
         {/* Cards */}
-        <Card sx={{ maxWidth: 345, maxHeight: 345 }}>
+        <Card sx={{ maxWidth: 345, maxHeight: 345 }} onClick={handleCardClick}>
           <CardActionArea>
             <CardMedia
               component="img"
               height="140"
-              image="static/images/dashboard-Image/ASPICE.webp"
+              image="static\images\dashboard-Image\ASPICE4.0.jpg"
               alt="qms image"
             />
             <CardContent>

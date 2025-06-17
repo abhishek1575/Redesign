@@ -1,22 +1,18 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import Dashboard from "./components/dashboard/dashboard";
-// import VModal from "./components/v-modalpage/vmodal2";
 import Index from "./components/v-modalpage";
-// import AutomotiveSpice from "./components/v-modalpage/VModal";
+import ASPICEProcessPage from "./components/process-areas/ASPICEProcessPage";
+import processes from "./data/processes.jsx"; 
 
 function App() {
-  
-
   return (
-    <>
-      {/* < Dashboard/> */}
-      {/* <AutomotiveSpice/> */}
-      {/* <VModal /> */}
-      <Index />
-    </>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/aspice" element={<Index />} />
+      <Route path="/aspice/:id" element={<ASPICEProcessPage />} />
+    </Routes>
   );
 }
 
-export default App
+export default App;

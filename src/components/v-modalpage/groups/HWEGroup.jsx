@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
 
-const HWEGroup = ({ SysPaper, isLaptop }) => (
+const HWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#f9d3b4",
@@ -28,6 +28,7 @@ const HWEGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="HWE.1"
       label="Hardware Requirements Analysis"
+      enabled={enabledProcessAreas.includes("HWE.1")}
     />
 
     <PositionedItem
@@ -36,6 +37,7 @@ const HWEGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="HWE.2"
       label="Hardware Design"
+      enabled={enabledProcessAreas.includes("HWE.2")}
     />
 
     <PositionedItem
@@ -44,6 +46,7 @@ const HWEGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="HWE.3"
       label="Verification against HW Design"
+      enabled={enabledProcessAreas.includes("HWE.3")}
     />
     {/*  */}
     <PositionedItem
@@ -52,6 +55,7 @@ const HWEGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="HWE.4"
       label="Verification against HW Requirements"
+      enabled={enabledProcessAreas.includes("HWE.4")}
     />
   </Box>
 );

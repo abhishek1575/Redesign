@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
 
-const ACQGroup = ({ StyledPaper, isLaptop }) => (
+const ACQGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#D9EAD3",
@@ -24,8 +24,9 @@ const ACQGroup = ({ StyledPaper, isLaptop }) => (
       style={StyledPaper}
       positions={{ desktop: [94, 78.5], laptop: [95, 72] }}
       isLaptop={isLaptop}
-      id="ACQ.2"
-      label="Supplier Agreement Management"
+      id="ACQ.4"
+      label="Supplier Monitoring"
+      enabled={enabledProcessAreas.includes("ACQ.4")}
     />
   </Box>
 );

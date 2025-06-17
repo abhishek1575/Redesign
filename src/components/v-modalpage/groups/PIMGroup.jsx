@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem"; // import PositionedItem
 
-const PIMGroup = ({ StyledPaper, isLaptop }) => (
+const PIMGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#C1CEE0",
@@ -27,6 +27,7 @@ const PIMGroup = ({ StyledPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="PIM.3"
       label="Process Improvement"
+      enabled={enabledProcessAreas.includes("PIM.3")}
     />
   </Box>
 );

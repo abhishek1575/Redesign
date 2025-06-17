@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
 
-const MANGroup = ({ SysPaper, isLaptop }) => (
+const MANGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
   <Box
     sx={{
       backgroundColor: "#C1CEE0",
@@ -11,6 +11,7 @@ const MANGroup = ({ SysPaper, isLaptop }) => (
       height: "250px",
       position: "relative",
       flexShrink: 0,
+     
     }}
   >
     <Typography
@@ -28,6 +29,7 @@ const MANGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="MAN.3"
       label="Project Management"
+      enabled={enabledProcessAreas.includes("MAN.3")}
     />
 
     <PositionedItem
@@ -36,6 +38,7 @@ const MANGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="MAN.5"
       label="Risk Management"
+      enabled={enabledProcessAreas.includes("MAN.5")}
     />
 
     <PositionedItem
@@ -44,6 +47,7 @@ const MANGroup = ({ SysPaper, isLaptop }) => (
       isLaptop={isLaptop}
       id="MAN.6"
       label="Measurement"
+      enabled={enabledProcessAreas.includes("MAN.6")}
     />
   </Box>
 );
