@@ -3,7 +3,7 @@ import "./App.css";
 import Dashboard from "./components/dashboard/dashboard";
 import Index from "./components/v-modalpage";
 import ASPICEProcessPage from "./components/process-areas/ASPICEProcessPage";
-import processes from "./data/processes.jsx"; 
+import processes from "./components/data/processes.jsx";
 
 function App() {
   return (

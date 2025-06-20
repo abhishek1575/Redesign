@@ -8,7 +8,7 @@ import ProcessDiagram from "./ProcessDiagram";
 import TeamRoles from "./TeamRoles";
 import ProcessFiles from "./ProcessFiles";
 import ProcessDetails from "../process-areas/ProcessDetails";
-import processes from "../../data/processes"; // Make sure this path is correct
+import processes from "../data/processes"; // Make sure this path is correct
 
 const ASPICEProcessPage = () => {
   const { id } = useParams();

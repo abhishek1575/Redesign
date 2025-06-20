@@ -21,7 +21,7 @@ const FileItem = ({ file }) => (
   >
     {/* Left Section - Icon + Text */}
     <Box
-      display="flex"
+      display="flex" 
       alignItems="center"
       flex={1}
     >

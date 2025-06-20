@@ -89,7 +89,7 @@ const Index = () => {
         </Typography>
      
         <FormControl size="small" sx={{ minWidth: 180 }}>
-          <InputLabel>Filter by Project</InputLabel>
+          {/* <InputLabel>Filter by Project</InputLabel> */}
           <Select
             value={selectedProject}
             onChange={(e) => setSelectedProject(e.target.value)}
