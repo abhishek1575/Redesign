@@ -1,41 +1,39 @@
-import { Paper } from "@mui/material";
-import { motion } from "framer-motion";
-
+import Box from "@mui/material/Box";
+import { useState } from "react";
 
 const ImageBox = () => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+    <Box
+      sx={{
+        border: "1px solid #e0e0e0",
+        borderRadius: 3,
+        padding: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: 160,
+        background: "#fff",
+        overflow: "hidden",
+        cursor: "pointer",
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <Paper
-        elevation={0}
-        sx={{
-          borderRadius: 3,
-          background: "linear-gradient(145deg, #ffffff, #f8f9fa)",
-          // minHeight: 250,
-          boxShadow: "0 4px 12px rgba(149, 157, 165, 0.08)",
-          border: "1px solid rgba(74, 111, 165, 0.10)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-          height: 160, // Ensure fixed height for the box
+      <img
+        src="static/images/ASPICE-image/swe1.png"
+        alt="ASPICE SWE.1"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          transition: "transform 0.3s ease",
+          transform: hover ? "scale(1.1)" : "scale(1)",
         }}
-      >
-        <img
-          src="static/images/ASPICE-image/swe1.png"
-          alt="ASPICE SWE.1"
-          style={{
-            width: "100%",
-            height: "100%",
-            // objectFit: "cover",
-            // display: "block",
-          }}
-        />
-      </Paper>
-    </motion.div>
+      />
+    </Box>
   );
 };
+
 export default ImageBox;
