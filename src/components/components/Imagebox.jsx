@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import { useState } from "react";
 
-const ImageBox = () => {
+const ImageBox = ({ image }) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ const ImageBox = () => {
       onMouseLeave={() => setHover(false)}
     >
       <img
-        src="static/images/ASPICE-image/swe1.png"
+        src={image}
         alt="ASPICE SWE.1"
         style={{
           width: "100%",

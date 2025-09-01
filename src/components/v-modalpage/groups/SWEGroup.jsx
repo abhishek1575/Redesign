@@ -6,7 +6,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`/aspice/${id.toLowerCase()}`);
+    navigate(`/aspice/${id}`);
   };
 
   return (
@@ -36,7 +36,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.1"
         label="Software Requirements Analysis"
-        onClick={() => handleClick("SWE1")}
+        onClick={() => handleClick("SWE.1")}
         enabled={enabledProcessAreas.includes("SWE.1")}
       />
 
@@ -46,7 +46,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.2"
         label="Software Architectural Design"
-        onClick={() => handleClick("SWE2")}
+        onClick={() => handleClick("SWE.2")}
         enabled={enabledProcessAreas.includes("SWE.2")}
       />
 
@@ -56,7 +56,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.3"
         label="Software Details Design and Unit Construction"
-        onClick={() => handleClick("SWE3")}
+        onClick={() => handleClick("SWE.3")}
         enabled={enabledProcessAreas.includes("SWE.3")}
       />
 
@@ -66,7 +66,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.4"
         label="Software Unit Verification"
-        onClick={() => handleClick("SWE4")}
+        onClick={() => handleClick("SWE.4")}
         enabled={enabledProcessAreas.includes("SWE.4")}
       />
 
@@ -76,7 +76,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.5"
         label="Software Component Verification and Integration Verification"
-        onClick={() => handleClick("SWE5")}
+        onClick={() => handleClick("SWE.5")}
         enabled={enabledProcessAreas.includes("SWE.5")}
       />
 
@@ -86,7 +86,7 @@ const SWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
         isLaptop={isLaptop}
         id="SWE.6"
         label="Software Verification"
-        onClick={() => handleClick("SWE6")}
+        onClick={() => handleClick("SWE.6")}
         enabled={enabledProcessAreas.includes("SWE.6")}
       />
     </Box>

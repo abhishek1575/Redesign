@@ -19,7 +19,6 @@ import {
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInRight } from "../anim/entranceAnimations";
-import { competencies } from "../data/swe1";
 import { sectionHeaderStyles, paperStyles } from "../styles/sectionStyles";
 
 const iconComponents = {
@@ -30,7 +29,7 @@ const iconComponents = {
   Checklist: Checklist,
 };
 
-const CompetenceSection = () => (
+const CompetenceSection = ({ competencies }) => (
   <motion.div {...fadeInRight}>
     <Paper sx={paperStyles("rgba(100, 181, 246, 0.15)")}>
       <Box sx={sectionHeaderStyles("#1976d2", "#64b5f6")}>

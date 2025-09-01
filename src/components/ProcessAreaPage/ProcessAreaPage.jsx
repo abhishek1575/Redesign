@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import { Container, Box, useTheme, useMediaQuery } from "@mui/material";
 import HeaderSection from "../components/HeaderSection";
 import WorkflowSection from "../components/WorkflowSection";
@@ -10,8 +11,10 @@ import CompetenceSection from "../components/CompetenceSection";
 import NextStepButton from "../components/NextStepButton";
 import { containerStyles } from "../styles/sectionStyles";
 import ImageBox from "../components/Imagebox";
+import { allProcessData } from "../data/allProcessData";
 
 const ProcessAreaPage = () => {
+  const { id: processId } = useParams();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [expanded, setExpanded] = useState({
@@ -25,11 +28,17 @@ const ProcessAreaPage = () => {
     setExpanded((prev) => ({ ...prev, [section]: !prev[section] }));
   };
 
+  const processData = allProcessData[processId];
+
+  if (!processData) {
+    return <div>Process area not found</div>; // Handle case where processId is invalid
+  }
+
   return (
     <Container maxWidth="xl" sx={containerStyles}>
       <HeaderSection
-        title="SWE.1 - Software Requirements Analysis"
-        subtitle="Software Engineering Process Group"
+        title={processData.title}
+        subtitle={processData.subtitle}
       />
 
       <Box
@@ -51,18 +60,22 @@ const ProcessAreaPage = () => {
           }}
         >
           <WorkflowSection
+            workflow={processData.workflow}
             expanded={expanded.workflow}
             toggleSection={() => toggleSection("workflow")}
           />
           <DescriptionSection
+            description={processData.description}
             expanded={expanded.description}
             toggleSection={() => toggleSection("description")}
           />
           <PurposeSection
+            purpose={processData.purpose}
             expanded={expanded.purpose}
             toggleSection={() => toggleSection("purpose")}
           />
           <FilesSection
+            files={processData.files}
             expanded={expanded.files}
             toggleSection={() => toggleSection("files")}
           />
@@ -78,10 +91,10 @@ const ProcessAreaPage = () => {
             gap: 3,
           }}
         >
-          <ImageBox />
-          <StakeholdersSection />
-          <CompetenceSection />
-          <NextStepButton nextStep="SWE.2" />
+          <ImageBox image={processData.image} />
+          <StakeholdersSection stakeholders={processData.stakeholders} />
+          <CompetenceSection competencies={processData.competencies} />
+          <NextStepButton nextStep={processData.nextStep} />
         </Box>
       </Box>
     </Container>
@@ -89,3 +102,4 @@ const ProcessAreaPage = () => {
 };
 
 export default ProcessAreaPage;
+

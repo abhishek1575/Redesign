@@ -3,14 +3,13 @@ import { Typography, Box, Paper } from "@mui/material";
 import { Description} from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "../anim/entranceAnimations";
-import { purposeContent } from "../data/processData";
 import {
   sectionHeaderStyles,
   sectionContentStyles,
   paperStyles,
 } from "../styles/sectionStyles";
 
-const PurposeSection = () => (
+const PurposeSection = ({ purpose }) => (
   <motion.div {...fadeInLeft}>
     <Paper sx={paperStyles("rgba(235, 176, 114, 0.15)")}>
       <Box
@@ -26,7 +25,7 @@ const PurposeSection = () => (
      
         <Box sx={sectionContentStyles}>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ textAlign: "left" }}>
-            {purposeContent.description}
+            {purpose.description}
           </Typography>
           <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
             <strong>This process aims to:</strong>
@@ -43,7 +42,7 @@ const PurposeSection = () => (
               },
             }}
           >
-            {purposeContent.objectives.map((item, index) => (
+            {purpose.objectives.map((item, index) => (
               <motion.li
                 key={index}
                 initial={{ opacity: 0, x: -20 }}

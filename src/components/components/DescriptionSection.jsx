@@ -3,14 +3,13 @@ import { Typography, Box, Paper } from "@mui/material";
 import { Description } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "../anim/entranceAnimations";
-import { descriptionContent } from "../data/swe1";
 import {
   sectionHeaderStyles,
   sectionContentStyles,
   paperStyles,
 } from "../styles/sectionStyles";
 
-const DescriptionSection = () => (
+const DescriptionSection = ({ description }) => (
   <motion.div {...fadeInLeft}>
     <Paper sx={paperStyles("rgba(100, 181, 246, 0.15)")}>
       <Box sx={sectionHeaderStyles("#1976d2", "#64b5f6")}>
@@ -20,7 +19,7 @@ const DescriptionSection = () => (
         </Typography>
       </Box>
       <Box sx={sectionContentStyles}>
-        {descriptionContent.map((paragraph, index) => (
+        {description.map((paragraph, index) => (
           <Typography
             key={index}
             variant="body1"

@@ -3,14 +3,13 @@ import { Typography, Box, Paper } from "@mui/material";
 import { Description} from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "../anim/entranceAnimations";
-import { workflowContent } from "../data/processData";
 import {
   sectionHeaderStyles,
   sectionContentStyles,
   paperStyles,
 } from "../styles/sectionStyles";
 
-const WorkflowSection = () => (
+const WorkflowSection = ({ workflow }) => (
   <motion.div {...fadeInLeft}>
     <Paper sx={paperStyles("rgba(58, 96, 115, 0.13)")}>
       <Box sx={sectionHeaderStyles("#1A83B7", "#6AC8F8")}>
@@ -49,7 +48,7 @@ const WorkflowSection = () => (
           color="text.secondary"
           sx={{ textAlign: "left" }}
         >
-          {workflowContent.description}
+          {workflow.description}
         </Typography>
         <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
           <strong>Key steps include:</strong>
@@ -58,7 +57,7 @@ const WorkflowSection = () => (
           component="ul"
           sx={{ pl: 3, mt: 1, listStyle: "disc", color: "#3a6073" }}
         >
-          {workflowContent.steps.map((step, index) => (
+          {workflow.steps.map((step, index) => (
             <motion.li
               key={index}
               initial={{ opacity: 0, x: -20 }}

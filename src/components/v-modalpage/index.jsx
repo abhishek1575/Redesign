@@ -72,7 +72,7 @@ const Index = () => {
   }, [isLaptop, isMobile, theme]);
 
   return (
-    <Box sx={{ width: "100%", p: 1, boxSizing: "border-box" }}>
+    <Box sx={{ width: "100%", p: 1, boxSizing: "border-box", backgroundColor: theme.palette.background.default }}>
       <Box
         sx={{
           display: "flex",
@@ -293,6 +293,7 @@ export default Index;
 //           position: "relative",
 //         }}
 //       >
+
 //         {/* Left Column: SUP Group */}
 //         <SUPGroup StyledPaper={StyledPaper} isLaptop={isLaptop} />
 

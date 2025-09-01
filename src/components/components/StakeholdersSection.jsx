@@ -12,10 +12,9 @@ import {
 import { Group, Work } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInRight } from "../anim/entranceAnimations";
-import { stakeholders } from "../data/stakeholderData";
 import { sectionHeaderStyles, paperStyles } from "../styles/sectionStyles";
 
-const StakeholdersSection = () => (
+const StakeholdersSection = ({ stakeholders }) => (
   <motion.div {...fadeInRight}>
     <Paper sx={paperStyles("rgba(44, 62, 80, 0.12)")}>
       <Box sx={sectionHeaderStyles("#16a085", "#69E6CD")}>

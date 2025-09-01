@@ -19,7 +19,6 @@ import {
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "../anim/entranceAnimations";
-import { inputFiles, outputFiles } from "../data/fileData";
 import {
   sectionHeaderStyles,
   sectionContentStyles,
@@ -27,7 +26,7 @@ import {
 } from "../styles/sectionStyles";
 import { downloadButtonStyles } from "../styles/buttonStyles";
 
-const FilesSection = () => (
+const FilesSection = ({ files }) => (
   <motion.div {...fadeInLeft}>
     <Paper sx={paperStyles("rgba(157, 115, 180, 0.15)")}>
       <Box
@@ -58,7 +57,7 @@ const FilesSection = () => (
                 Input Files
               </Box>
               <List>
-                {inputFiles.map((file, index) => (
+                {files.input.map((file, index) => (
                   <motion.div
                     key={file.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -118,7 +117,7 @@ const FilesSection = () => (
                 Output Files
               </Box>
               <List>
-                {outputFiles.map((file, index) => (
+                {files.output.map((file, index) => (
                   <motion.div
                     key={file.id}
                     initial={{ opacity: 0, y: 20 }}
