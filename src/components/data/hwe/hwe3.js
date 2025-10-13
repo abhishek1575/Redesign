@@ -1,0 +1,1 @@
+export const hwe3Data = { title: "HWE.3 - Hardware Integration Test" };

@@ -1,8 +1,14 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
+import { useNavigate } from "react-router-dom";
 
-const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
-  <Box
+const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
+  const navigate = useNavigate();
+  const handleClick = (id) =>{
+    navigate(`/aspice/${id}`);
+  }
+  return (
+<Box
     sx={{
       backgroundColor: "#D9EAD3",
       borderRadius: "5px",
@@ -29,6 +35,7 @@ const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="MLE.1"
       label="Machine Learning Requirement Analysis"
       enabled={enabledProcessAreas.includes("MLE.1")}
+      onClick = {() => handleClick("MLE.1")}
     />
 
     <PositionedItem
@@ -38,6 +45,7 @@ const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="MLE.2"
       label="Machine Learning Architecture"
       enabled={enabledProcessAreas.includes("MLE.2")}
+      onClick = {() => handleClick("MLE.2")}
     />
 
     <PositionedItem
@@ -47,6 +55,7 @@ const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="MLE.3"
       label="Machine Learning Training"
       enabled={enabledProcessAreas.includes("MLE.3")}
+      onClick = {() => handleClick("MLE.3")}
     />
 
     <PositionedItem
@@ -56,10 +65,13 @@ const MLEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="MLE.4"
       label="Machine Learning Model Testing"
       enabled={enabledProcessAreas.includes("MLE.4")}
+      onClick = {() => handleClick("MLE.4")}
     />
   </Box>
 );
 
+}
+  
 export default MLEGroup;
 
 // import { Typography, Box } from "@mui/material";

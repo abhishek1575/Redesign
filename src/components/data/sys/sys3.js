@@ -1,0 +1,1 @@
+export const sys3Data = { title: "SYS.3 - System Architectural Design" };

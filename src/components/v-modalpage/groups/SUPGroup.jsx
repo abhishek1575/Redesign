@@ -1,7 +1,14 @@
 import { Grid, Typography, Box } from "@mui/material";
 import ProcessItem from "../ProcessItem";
+import { useNavigate } from "react-router-dom";
 
 const SUPGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/aspice/${id}`);
+  };
+
   const items = [
     { id: "SUP.1", label: "Quality Assurance" },
     { id: "SUP.8", label: "Configuration Management" },
@@ -57,6 +64,7 @@ const SUPGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => {
                   id={item.id}
                   label={item.label}
                   enabled={isEnabled}
+                  onClick={() => handleClick(item.id)}
                 />
               </Box>
             </Grid>
@@ -68,6 +76,7 @@ const SUPGroup = ({ StyledPaper, isLaptop, enabledProcessAreas }) => {
 };
 
 export default SUPGroup;
+
 
 // import { Grid, Typography, Box } from "@mui/material";
 // import ProcessItem from "../ProcessItem";

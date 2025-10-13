@@ -1,0 +1,1 @@
+export const sup1Data = { title: "SUP.1 - Quality Assurance" };

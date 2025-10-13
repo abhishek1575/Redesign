@@ -1,0 +1,1 @@
+export const sys2Data = { title: "SYS.2 - System Requirements Analysis" };

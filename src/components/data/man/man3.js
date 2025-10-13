@@ -1,0 +1,1 @@
+export const man3Data = { title: "MAN.3 - Project Management" };

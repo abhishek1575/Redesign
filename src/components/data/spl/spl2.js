@@ -1,0 +1,1 @@
+export const spl2Data = { title: "SPL.2 - Supplier On-boarding" };

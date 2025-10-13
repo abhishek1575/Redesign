@@ -1,0 +1,1 @@
+export const hwe4Data = { title: "HWE.4 - Hardware Qualification Test" };

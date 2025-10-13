@@ -1,0 +1,1 @@
+export const man5Data = { title: "MAN.5 - Risk Management" };

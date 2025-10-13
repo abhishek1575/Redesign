@@ -1,0 +1,1 @@
+export const hwe2Data = { title: "HWE.2 - Hardware Design" };

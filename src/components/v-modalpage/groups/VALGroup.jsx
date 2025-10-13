@@ -1,7 +1,14 @@
 import { Typography, Box } from "@mui/material";
 import ProcessItem from "../ProcessItem";
+import { useNavigate } from "react-router-dom";
 
 const VALGroup = ({ StyledPaper, enabledProcessAreas }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/aspice/${id}`);
+  };
+
   const isEnabled = enabledProcessAreas.includes("VAL.1");
 
   return (
@@ -37,6 +44,7 @@ const VALGroup = ({ StyledPaper, enabledProcessAreas }) => {
           id="VAL.1"
           label="Validation"
           enabled={isEnabled}
+          onClick={() => handleClick("VAL.1")}
         />
       </Box>
     </Box>
@@ -44,6 +52,7 @@ const VALGroup = ({ StyledPaper, enabledProcessAreas }) => {
 };
 
 export default VALGroup;
+
 
 // import { Typography, Box } from "@mui/material";
 // import ProcessItem from "../ProcessItem";

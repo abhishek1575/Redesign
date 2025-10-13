@@ -1,7 +1,13 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
+import { useNavigate } from "react-router-dom";
 
-const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
+const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
+  const navigate = useNavigate();
+  const handleClick = (id) => {
+      navigate(`/aspice/${id}`);
+  };
+  return (
   <Box
     sx={{
       backgroundColor: "#f9d3b4",
@@ -29,6 +35,7 @@ const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="SYS.1"
       label="Requirement Elicitation"
       enabled={enabledProcessAreas.includes("SYS.1")}
+      onClick={() => handleClick("SYS.1")}
     />
 
     <PositionedItem
@@ -38,6 +45,7 @@ const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="SYS.2"
       label="System Requirement Analysis"
       enabled={enabledProcessAreas.includes("SYS.2")}
+      onClick={() => handleClick("SYS.2")}
     />
 
     <PositionedItem
@@ -47,6 +55,7 @@ const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="SYS.3"
       label="System Architecture Design"
       enabled={enabledProcessAreas.includes("SYS.3")}
+      onClick={() => handleClick("SYS.3")}
     />
 
     <PositionedItem
@@ -56,6 +65,7 @@ const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="SYS.4"
       label="System Integration and Integration Verification"
       enabled={enabledProcessAreas.includes("SYS.4")}
+      onClick={() => handleClick("SYS.4")}
     />
 
     <PositionedItem
@@ -65,9 +75,12 @@ const SYSGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
       id="SYS.5"
       label="System Verification"
       enabled={enabledProcessAreas.includes("SYS.5")}
+      onClick={() => handleClick("SYS.5")}
     />
   </Box>
 );
+}
+  
 
 export default SYSGroup;
 

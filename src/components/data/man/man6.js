@@ -1,0 +1,1 @@
+export const man6Data = { title: "MAN.6 - Measurement" };

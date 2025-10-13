@@ -1,0 +1,1 @@
+export const sup8Data = { title: "SUP.8 - Configuration Management" };

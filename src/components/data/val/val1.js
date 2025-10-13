@@ -1,0 +1,1 @@
+export const val1Data = { title: "VAL.1 - Validation" };

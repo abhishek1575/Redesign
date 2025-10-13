@@ -1,63 +1,78 @@
 import { Typography, Box } from "@mui/material";
 import PositionedItem from "../PositionedItem";
+import { useNavigate } from "react-router-dom";
 
-const HWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => (
-  <Box
-    sx={{
-      backgroundColor: "#f9d3b4",
-      borderRadius: "5px",
-      p: 1,
-      width: isLaptop ? "285px" : "360px",
-      height: "275px",
-      position: "relative",
-      flexShrink: 0,
-    }}
-  >
-    <Typography
-      variant="subtitle2"
-      fontWeight="bold"
-      textAlign="center"
-      sx={{ mb: 1 }}
+const HWEGroup = ({ SysPaper, isLaptop, enabledProcessAreas }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+   
+      navigate(`/aspice/${id}`);
+    
+  };
+
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#f9d3b4",
+        borderRadius: "5px",
+        p: 1,
+        width: isLaptop ? "285px" : "360px",
+        height: "275px",
+        position: "relative",
+        flexShrink: 0,
+      }}
     >
-      Hardware Engineering Process Group (HWE)
-    </Typography>
+      <Typography
+        variant="subtitle2"
+        fontWeight="bold"
+        textAlign="center"
+        sx={{ mb: 1 }}
+      >
+        Hardware Engineering Process Group (HWE)
+      </Typography>
 
-    <PositionedItem
-      style={SysPaper}
-      positions={{ desktop: [30, 22], laptop: [26, 22] }}
-      isLaptop={isLaptop}
-      id="HWE.1"
-      label="Hardware Requirements Analysis"
-      enabled={enabledProcessAreas.includes("HWE.1")}
-    />
+      <PositionedItem
+        style={SysPaper}
+        positions={{ desktop: [30, 22], laptop: [26, 22] }}
+        isLaptop={isLaptop}
+        id="HWE.1"
+        label="Hardware Requirements Analysis"
+        enabled={enabledProcessAreas.includes("HWE.1")}
+        onClick={() => handleClick("HWE.1")}
+      />
 
-    <PositionedItem
-      style={SysPaper}
-      positions={{ desktop: [55, 29], laptop: [60, 25] }}
-      isLaptop={isLaptop}
-      id="HWE.2"
-      label="Hardware Design"
-      enabled={enabledProcessAreas.includes("HWE.2")}
-    />
+      <PositionedItem
+        style={SysPaper}
+        positions={{ desktop: [55, 29], laptop: [60, 25] }}
+        isLaptop={isLaptop}
+        id="HWE.2"
+        label="Hardware Design"
+        enabled={enabledProcessAreas.includes("HWE.2")}
+        onClick={() => handleClick("HWE.2")}
+      />
 
-    <PositionedItem
-      style={SysPaper}
-      positions={{ desktop: [58, 71], laptop: [26, 75] }}
-      isLaptop={isLaptop}
-      id="HWE.3"
-      label="Verification against HW Design"
-      enabled={enabledProcessAreas.includes("HWE.3")}
-    />
-    {/*  */}
-    <PositionedItem
-      style={SysPaper}
-      positions={{ desktop: [30, 78], laptop: [60, 70] }}
-      isLaptop={isLaptop}
-      id="HWE.4"
-      label="Verification against HW Requirements"
-      enabled={enabledProcessAreas.includes("HWE.4")}
-    />
-  </Box>
-);
+      <PositionedItem
+        style={SysPaper}
+        positions={{ desktop: [58, 71], laptop: [26, 75] }}
+        isLaptop={isLaptop}
+        id="HWE.3"
+        label="Verification against HW Design"
+        enabled={enabledProcessAreas.includes("HWE.3")}
+        onClick={() => handleClick("HWE.3")}
+      />
+      {/*  */}
+      <PositionedItem
+        style={SysPaper}
+        positions={{ desktop: [30, 78], laptop: [60, 70] }}
+        isLaptop={isLaptop}
+        id="HWE.4"
+        label="Verification against HW Requirements"
+        enabled={enabledProcessAreas.includes("HWE.4")}
+        onClick={() => handleClick("HWE.4")}
+      />
+    </Box>
+  );
+};
 
 export default HWEGroup;
