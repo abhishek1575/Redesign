@@ -86,6 +86,7 @@ function Dashboard() {
             maxHeight: 345,
             margin: isSmallScreen ? "0 auto" : undefined,
           }}
+          onClick={() => navigate("/iso_mainpage")}
         >
           <CardActionArea>
             <CardMedia
