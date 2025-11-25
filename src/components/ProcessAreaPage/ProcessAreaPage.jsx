@@ -64,11 +64,11 @@ const ProcessAreaPage = () => {
             expanded={expanded.workflow}
             toggleSection={() => toggleSection("workflow")}
           />
-          <DescriptionSection
+          {/* <DescriptionSection
             description={processData.description}
             expanded={expanded.description}
             toggleSection={() => toggleSection("description")}
-          />
+          /> */}
           <PurposeSection
             purpose={processData.purpose}
             expanded={expanded.purpose}

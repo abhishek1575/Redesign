@@ -42,15 +42,15 @@ const WorkflowSection = ({ workflow }) => (
             </Typography>
           </Box>
         </Box>
-        <Typography
+        {/* <Typography
           variant="body1"
           paragraph
           color="text.secondary"
           sx={{ textAlign: "left" }}
         >
           {workflow.description}
-        </Typography>
-        <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
+        </Typography> */}
+        {/* <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
           <strong>Key steps include:</strong>
         </Typography>
         <Box
@@ -74,7 +74,7 @@ const WorkflowSection = ({ workflow }) => (
               </Typography>
             </motion.li>
           ))}
-        </Box>
+        </Box> */}
       </Box>
     </Paper>
   </motion.div>

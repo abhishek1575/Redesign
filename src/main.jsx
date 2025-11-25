@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <App />
         {/* <ProcessAreaPage processId="SWE.1" /> */}
-        <ISO26262Portal />
+        {/* <ISO26262Portal /> */}
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>
