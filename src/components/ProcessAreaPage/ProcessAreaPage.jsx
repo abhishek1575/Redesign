@@ -91,7 +91,7 @@ const ProcessAreaPage = () => {
             gap: 3,
           }}
         >
-          <ImageBox image={processData.image} />
+          {/* <ImageBox image={processData.image} /> */}
           <StakeholdersSection stakeholders={processData.stakeholders} />
           <CompetenceSection competencies={processData.competencies} />
           <NextStepButton nextStep={processData.nextStep} />
