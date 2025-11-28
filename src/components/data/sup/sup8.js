@@ -9,8 +9,8 @@ import {
 } from "@mui/icons-material";
 
 export const sup8Data = {
-  title: "SUP.8 - System Verification",
-  subtitle: "System Engineering Process Group",
+  title: "SUP.8 - Configuration Management",
+  subtitle: "Support Process Group",
   image: "/static/images/ASPICE-image/sup8.png",
   nextStep: "SUP.9",
   workflow: {

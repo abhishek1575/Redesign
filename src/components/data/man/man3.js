@@ -9,10 +9,10 @@ import {
 } from "@mui/icons-material";
 
 export const man3Data = {
-  title: "MAN.8 - Project Management",
+  title: "MAN.3 - Project Management",
   subtitle: "Management Process Group",
-  image: "/static/images/ASPICE-image/man8.png",
-  nextStep: "MAN.9",
+  image: "/static/images/ASPICE-image/man3.png",
+  nextStep: "MAN.5",
   workflow: {
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
