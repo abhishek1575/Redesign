@@ -15,6 +15,39 @@ export const swe6Data = {
   image: "/static/images/ASPICE-image/swe6.png",
   nextStep: null,
   workflow: {
+    title: "  Software Qualification Testing Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Test Planning & Strategy",
+        description:
+          "Define qualification test scope, approach, and acceptance criteria",
+      },
+      {
+        id: 2,
+        title: "Test Case Development",
+        description:
+          "Create comprehensive test cases covering all requirements",
+      },
+      {
+        id: 3,
+        title: "Test Environment Setup",
+        description:
+          "Prepare test environment matching target deployment conditions",
+      },
+      {
+        id: 4,
+        title: "Test Execution",
+        description:
+          "Execute qualification tests ncluding functional, performance, security",
+      },
+      {
+        id: 5,
+        title: "Test Reporting & Sign-off",
+        description:
+          "Document results, obtain stakeholder approval for release",
+      },
+    ],
     description:
       "The process of testing the integrated software item against the software requirements to demonstrate that the requirements have been met and the software is ready for delivery.",
     steps: [

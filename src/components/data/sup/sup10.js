@@ -14,6 +14,40 @@ export const sup10Data = {
   image: "/static/images/ASPICE-image/sup10.png",
   nextStep: "SUP.11",
   workflow: {
+    title: " Change Request Management Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Change Request Submission",
+        description:
+          "Receive and record change requests from stakeholders with justification",
+      },
+      {
+        id: 2,
+        title: "Impact Assessment",
+        description:
+          "Analyze technical, schedule, cost, and resource impacts of proposed change",
+      },
+      {
+        id: 3,
+        title: "Change Review & Approval",
+        description:
+          "Present to CCB for review and decision (approve, reject, defer)",
+      },
+      {
+        id: 4,
+        title: "Change Implementation",
+        description:
+          "Coordinate and track implementation of approved changes across teams",
+      },
+      {
+        id: 5,
+        title: "Verification & Closure",
+        description:
+          "Verify change implementation, update affected documents, and close CR",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

@@ -14,6 +14,40 @@ export const sys5Data = {
   image: "/static/images/ASPICE-image/sys5.png",
   nextStep: "SYS.6",
   workflow: {
+    title: "System Qualification Test Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Qualification Test Planning",
+        description:
+          "Define test scope, approach, resources, and acceptance criteria",
+      },
+      {
+        id: 2,
+        title: "Test Case Development",
+        description:
+          "Create comprehensive test cases covering all system requirements",
+      },
+      {
+        id: 3,
+        title: "Test Environment Preparation",
+        description:
+          "Setup test environment matching operational conditions and interfaces",
+      },
+      {
+        id: 4,
+        title: "Qualification Test Execution",
+        description:
+          "Execute functional, performance, safety, security, and usability tests",
+      },
+      {
+        id: 5,
+        title: "Acceptance & Sign-off",
+        description:
+          "Review results with stakeholders, obtain acceptance, authorize release",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

@@ -14,6 +14,39 @@ export const sup8Data = {
   image: "/static/images/ASPICE-image/sup8.png",
   nextStep: "SUP.9",
   workflow: {
+    title: " Configuration Management Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "CM Strategy & Planning",
+        description:
+          "Define CM approach, tools, naming conventions, and responsibilities",
+      },
+      {
+        id: 2,
+        title: "Configuration Identification",
+        description:
+          "Identify CIs, assign unique identifiers, establish item structure",
+      },
+      {
+        id: 3,
+        title: "Change Control Process",
+        description:
+          "Evaluate change requests, assess impacts, obtain CCB approval",
+      },
+      {
+        id: 4,
+        title: "Baseline & Version Management",
+        description:
+          "Create baselines, control versions, manage branches and merges",
+      },
+      {
+        id: 5,
+        title: "Status Accounting & Audits",
+        description:
+          "Track CI status, generate reports, perform configuration audits",
+      },
+    ],
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

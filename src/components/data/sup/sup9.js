@@ -14,6 +14,40 @@ export const sup9Data = {
   image: "/static/images/ASPICE-image/sup9.png",
   nextStep: "SUP.10",
   workflow: {
+    title: " Problem Resolution Management Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Problem Identification & Recording",
+        description:
+          "Detect and document problems, defects, and anomalies in tracking system",
+      },
+      {
+        id: 2,
+        title: "Problem Classification & Prioritization",
+        description:
+          "Categorize by severity, priority, and impact; assign to appropriate teams",
+      },
+      {
+        id: 3,
+        title: "Root Cause Analysis",
+        description:
+          "Investigate problems to identify underlying causes and contributing factors",
+      },
+      {
+        id: 4,
+        title: "Resolution Implementation",
+        description:
+          "Develop and implement fixes, workarounds, or corrective actions",
+      },
+      {
+        id: 5,
+        title: "Verification & Closure",
+        description:
+          "Verify resolution effectiveness, update records, and close problems",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

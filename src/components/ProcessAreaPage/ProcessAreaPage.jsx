@@ -60,6 +60,7 @@ const ProcessAreaPage = () => {
           }}
         >
           <WorkflowSection
+            processId={processId}
             workflow={processData.workflow}
             expanded={expanded.workflow}
             toggleSection={() => toggleSection("workflow")}

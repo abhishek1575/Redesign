@@ -14,6 +14,40 @@ export const sys4Data = {
   image: "/static/images/ASPICE-image/sys4.png",
   nextStep: "SYS.5",
   workflow: {
+    title: "System Integration and Integration Test Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Integration Strategy & Planning",
+        description:
+          "Define integration approach, sequence, test environment, and resources",
+      },
+      {
+        id: 2,
+        title: "Integration Test Design",
+        description:
+          "Develop integration test cases, procedures, and success criteria",
+      },
+      {
+        id: 3,
+        title: "System Integration",
+        description:
+          "Progressively integrate HW, SW, and manual operations per sequence",
+      },
+      {
+        id: 4,
+        title: "Interface Testing",
+        description:
+          "Execute integration tests to verify interfaces and interactions",
+      },
+      {
+        id: 5,
+        title: "Problem Resolution & Reporting",
+        description:
+          "Resolve defects, analyze results, and report integration status",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

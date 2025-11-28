@@ -14,6 +14,42 @@ export const sup1Data = {
   image: "/static/images/ASPICE-image/sup8.png",
   nextStep: "SUP.9",
   workflow: {
+    title: " Quality Assurance Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "QA Planning",
+        description:
+          "Define QA strategy, audit schedule, review criteria, and resource allocation",
+      },
+      {
+        id: 2,
+        title: "Process & Product Audits",
+        description:
+          "Conduct independent audits of processes and work products for compliance",
+      },
+      {
+        id: 3,
+        title: "Non-Conformance Identification",
+        description:
+          "Document deviations, defects, and non-conformances found during reviews",
+      },
+      {
+        id: 4,
+        title: "Corrective Action Management",
+        description:
+          "Work with teams to define and implement corrective actions",
+      },
+      {
+        id: 5,
+        title: "QA Reporting & Escalation",
+        description:
+          "Report quality status, trends, and escalate critical issues to management",
+      },
+     
+    ],
+    
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

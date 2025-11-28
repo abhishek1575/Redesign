@@ -13,6 +13,39 @@ export const swe5Data = {
   image: "/static/images/ASPICE-image/swe5.png",
   nextStep: "SWE.6",
   workflow: {
+    title: " Software Integration and Integration Test",
+    cards: [
+      {
+        id: 1,
+        title: "Integration Strategy Definition",
+        description:
+          "Define integration approach (incremental, big bang) and sequence",
+      },
+      {
+        id: 2,
+        title: "Integration Test Planning",
+        description:
+          "Create integration test plan, test cases, and test environment",
+      },
+      {
+        id: 3,
+        title: "Software Integration",
+        description:
+          "Progressively integrate units and components per integration sequence",
+      },
+      {
+        id: 4,
+        title: "Integration Testing",
+        description:
+          "Execute integration tests to verify interfaces and interactions",
+      },
+      {
+        id: 5,
+        title: "Results Analysis & Reporting",
+        description:
+          "Analyze results, manage defects, and report integration status",
+      },
+    ],
     description:
       "The process of progressively combining software units into components and larger aggregates, and testing the interactions between them.",
     steps: [

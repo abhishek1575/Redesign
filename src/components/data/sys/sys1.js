@@ -14,6 +14,39 @@ export const sys1Data = {
   image: "/static/images/ASPICE-image/sys1.png",
   nextStep: "SYS.2",
   workflow: {
+    title: "Requirements Elicitation Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Stakeholder Identification",
+        description:
+          "Identify all stakeholders including customers, users, operators, and regulators",
+      },
+      {
+        id: 2,
+        title: "Elicitation Planning",
+        description:
+          "Define elicitation strategy, select techniques, schedule sessions",
+      },
+      {
+        id: 3,
+        title: "Requirements Elicitation",
+        description:
+          "Conduct interviews, workshops, observations, and document analysis",
+      },
+      {
+        id: 4,
+        title: "Requirements Documentation",
+        description:
+          "Document elicited requirements, scenarios, and stakeholder needs",
+      },
+      {
+        id: 5,
+        title: "Validation & Agreement",
+        description:
+          "Validate requirements with stakeholders and obtain agreement",
+      },
+    ],
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

@@ -14,6 +14,40 @@ export const sys2Data = {
   image: "/static/images/ASPICE-image/sys2.png",
   nextStep: "SYS.3",
   workflow: {
+    title: "System Requirements Analysis Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Requirements Analysis",
+        description:
+          "Analyze stakeholder requirements for clarity, feasibility, and completeness",
+      },
+      {
+        id: 2,
+        title: "System Requirements Specification",
+        description:
+          "Define detailed system functional and non-functional requirements",
+      },
+      {
+        id: 3,
+        title: "Interface Definition",
+        description:
+          "Specify system interfaces with external entities and subsystems",
+      },
+      {
+        id: 4,
+        title: "Requirements Verification Criteria",
+        description:
+          "Define verification methods and acceptance criteria for each requirement",
+      },
+      {
+        id: 5,
+        title: "Requirements Review & Baseline",
+        description:
+          "Conduct formal review, establish traceability, and create baseline",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box, Paper } from "@mui/material";
-import { Description} from "@mui/icons-material";
+import { Description } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "../anim/entranceAnimations";
 import {
@@ -8,79 +8,58 @@ import {
   sectionContentStyles,
   paperStyles,
 } from "../styles/sectionStyles";
+import { workflowMapping } from "../data/workflowImage/workflowMapping";
 
-const WorkflowSection = ({ workflow }) => (
-  <motion.div {...fadeInLeft}>
-    <Paper sx={paperStyles("rgba(58, 96, 115, 0.13)")}>
-      <Box sx={sectionHeaderStyles("#1A83B7", "#6AC8F8")}>
-        <Typography variant="h6" fontWeight="600" sx={{ flex: 1, textAlign: "center" }}>
-          <Description
-            sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
-          />
-          Workflow Process
-        </Typography>
-      </Box>
-      <Box sx={sectionContentStyles}>
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-          <Box
-            component={motion.div}
-            whileHover={{ scale: 1.02 }}
-            sx={{
-              width: "100%",
-              height: 200,
-              background: "linear-gradient(45deg, #e0eafc, #cfdef3)",
-              borderRadius: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px dashed #3a6073",
-              boxShadow: "inset 0 0 15px rgba(58, 96, 115, 0.08)",
-            }}
+const WorkflowSection = ({ processId, workflow }) => {
+  const WorkflowComponent = workflowMapping[processId];
+
+  return (
+    <motion.div {...fadeInLeft}>
+      <Paper sx={paperStyles("rgba(58, 96, 115, 0.13)")}>
+        <Box sx={sectionHeaderStyles("#1A83B7", "#6AC8F8")}>
+          <Typography
+            variant="h6"
+            fontWeight="600"
+            sx={{ flex: 1, textAlign: "center" }}
           >
-            <Typography variant="h6" color="#3a6073" fontWeight="600">
-              Workflow Diagram
-            </Typography>
+            <Description
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            Workflow Process
+          </Typography>
+        </Box>
+        <Box sx={sectionContentStyles}>
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+            {WorkflowComponent ? (
+              <WorkflowComponent title={workflow.title} cards={workflow.cards} />
+            ) : (
+              <Box
+                sx={{
+                  width: "100%",
+                  height: 200,
+                  background: "linear-gradient(45deg, #e0eafc, #cfdef3)",
+                  borderRadius: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "1px dashed #3a6073",
+                  boxShadow: "inset 0 0 15px rgba(58, 96, 115, 0.08)",
+                }}
+              >
+                <Typography variant="h6" color="#3a6073" fontWeight="600">
+                  Workflow Diagram Not Found
+                </Typography>
+              </Box>
+            )}
           </Box>
         </Box>
-        {/* <Typography
-          variant="body1"
-          paragraph
-          color="text.secondary"
-          sx={{ textAlign: "left" }}
-        >
-          {workflow.description}
-        </Typography> */}
-        {/* <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
-          <strong>Key steps include:</strong>
-        </Typography>
-        <Box
-          component="ul"
-          sx={{ pl: 3, mt: 1, listStyle: "disc", color: "#3a6073" }}
-        >
-          {workflow.steps.map((step, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * index }}
-              style={{ color: "#3a6073" }}
-            >
-              <Typography
-                variant="body1"
-                color="text.secondary"
-                sx={{ textAlign: "left" }}
-              >
-                {step}
-              </Typography>
-            </motion.li>
-          ))}
-        </Box> */}
-      </Box>
-    </Paper>
-  </motion.div>
-);
+      </Paper>
+    </motion.div>
+  );
+};
 
 export default WorkflowSection;
+
 
 // import React from "react";
 // import { Typography, Box, Collapse, Paper } from "@mui/material";

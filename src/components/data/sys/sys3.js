@@ -14,6 +14,40 @@ export const sys3Data = {
   image: "/static/images/ASPICE-image/sys3.png",
   nextStep: "SYS.4",
   workflow: {
+    title: "System Architectural Design Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Architecture Strategy Definition",
+        description:
+          "Define architectural approach, patterns, and design principles",
+      },
+      {
+        id: 2,
+        title: "System Decomposition",
+        description:
+          "Decompose system into major elements (hardware, software, manual operations)",
+      },
+      {
+        id: 3,
+        title: "Requirements Allocation",
+        description:
+          "Allocate system requirements to architectural elements and subsystems",
+      },
+      {
+        id: 4,
+        title: "Interface Design",
+        description:
+          "Define interfaces between elements, protocols, and data flows",
+      },
+      {
+        id: 5,
+        title: "Architecture Verification",
+        description:
+          "Verify architecture against requirements and conduct design reviews",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

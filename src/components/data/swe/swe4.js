@@ -14,6 +14,35 @@ export const swe4Data = {
   image: "/static/images/ASPICE-image/swe4.png",
   nextStep: "SWE.5",
   workflow: {
+    title: " Software Unit Verification Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Test Planning",
+        description: "Define unit test strategy, scope, and coverage criteria",
+      },
+      {
+        id: 2,
+        title: "Test Case Design",
+        description:
+          "Create detailed test cases for each unit based on requirements",
+      },
+      {
+        id: 3,
+        title: "Test Execution",
+        description: "Execute unit tests using automated test frameworks",
+      },
+      {
+        id: 4,
+        title: "Coverage Analysis",
+        description: "Measure code coverage and identify gaps in testing",
+      },
+      {
+        id: 5,
+        title: "Defect Management & Reporting",
+        description: "Log defects, track fixes, and document test results",
+      },
+    ],
     description:
       "The process of verifying that each software unit meets its detailed design and required functionality, and is free of defects.",
     steps: [

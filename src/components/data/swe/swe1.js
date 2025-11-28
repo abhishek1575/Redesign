@@ -14,6 +14,15 @@ export const swe1Data = {
   image: "/static/images/ASPICE-image/swe1.png",
   nextStep: "SWE.2",
   workflow: {
+    title: "Requirements Engineering Workflow",
+    cards: [
+      { id: 1, title: "Elicitation", description: "Gather & analyze requirements" },
+      { id: 2, title: "Specification", description: "Document all requirements" },
+      { id: 3, title: "Analysis", description: "Check for consistency & feasibility" },
+      { id: 4, title: "Traceability", description: "Link to system elements" },
+      { id: 5, title: "Review", description: "Formal review and approval" },
+      { id: 6, title: "Management", description: "Track changes throughout lifecycle" },
+    ],
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

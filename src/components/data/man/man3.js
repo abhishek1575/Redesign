@@ -14,6 +14,40 @@ export const man3Data = {
   image: "/static/images/ASPICE-image/man3.png",
   nextStep: "MAN.5",
   workflow: {
+    title: "Project Management Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Project Initiation",
+        description:
+          "Define scope, objectives, stakeholders, constraints, and success criteria",
+      },
+      {
+        id: 2,
+        title: "Project Planning",
+        description:
+          "Create WBS, schedule, budget, resource plan, and quality plan",
+      },
+      {
+        id: 3,
+        title: "Project Execution",
+        description:
+          "Coordinate resources, manage tasks, ensure deliverable quality",
+      },
+      {
+        id: 4,
+        title: "Monitoring & Control",
+        description:
+          "Track progress, manage changes, control scope/schedule/budget",
+      },
+      {
+        id: 5,
+        title: "Project Closure",
+        description:
+          "Complete deliverables, conduct retrospective, archive documentation",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

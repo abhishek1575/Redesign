@@ -12,6 +12,40 @@ export const swe2Data = {
   image: "/static/images/ASPICE-image/swe2.png",
   nextStep: "SWE.3",
   workflow: {
+    title: "Software Architectural Design Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Architecture Strategy Definition",
+        description:
+          "Define architectural patterns, design principles, and technology stack",
+      },
+      {
+        id: 2,
+        title: "Component Identification",
+        description:
+          "Identify major software components and their responsibilities",
+      },
+      {
+        id: 3,
+        title: "Interface Design",
+        description:
+          "Define interfaces, protocols, and data flows between components",
+      },
+      {
+        id: 4,
+        title: "Architecture Documentation",
+        description:
+          "Document architecture using UML, diagrams, and specifications",
+      },
+      {
+        id: 5,
+        title: "Architecture Review & Validation",
+        description:
+          "Conduct architecture reviews and verify against requirements",
+      },
+      
+    ],
     description:
       "The process of transforming software requirements into a high-level structure (architecture) that defines the software components, their interactions, and interfaces.",
     steps: [
@@ -58,8 +92,8 @@ export const swe2Data = {
         name: "Interface Control Documents",
         size: "0.7 MB",
       },
-      { id: 4, name: "Architecture Review Report", size: "1.1 MB", },
-      { id: 5, name: "Requirements Allocation Matrix", size: "0.8 MB", },
+      { id: 4, name: "Architecture Review Report", size: "1.1 MB" },
+      { id: 5, name: "Requirements Allocation Matrix", size: "0.8 MB" },
     ],
   },
   stakeholders: [

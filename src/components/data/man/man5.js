@@ -1,9 +1,59 @@
+import {
+  Code,
+  TrendingUp,
+  Group,
+  VerifiedUser,
+  Checklist,
+  Work,
+  Description,
+} from "@mui/icons-material";
+
 export const man5Data = {
   title: "MAN.5 - Risk Management",
   subtitle: "Management Process Group",
   image: "/static/images/ASPICE-image/man5.png",
   nextStep: "MAN.6",
   workflow: {
+    title: "Risk Management Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Risk Management Planning",
+        description:
+          "Define risk management approach, categories, thresholds, and roles",
+      },
+      {
+        id: 2,
+        title: "Risk Identification",
+        description:
+          "Identify potential risks using brainstorming, checklists, and lessons learned",
+      },
+      {
+        id: 3,
+        title: "Risk Analysis & Prioritization",
+        description:
+          "Assess probability and impact, calculate risk exposure, prioritize risks",
+      },
+      {
+        id: 4,
+        title: "Risk Treatment Planning",
+        description:
+          "Develop mitigation strategies: avoid, transfer, mitigate, or accept",
+      },
+      {
+        id: 5,
+        title: "Risk Monitoring & Control",
+        description:
+          "Track risk indicators, implement mitigation actions, update risk status",
+      },
+      {
+        id: 6,
+        title: "Risk Communication & Reporting",
+        description:
+          "Report risk status, escalate critical risks, share lessons learned",
+      },
+    ],
+
     description:
       "The workflow for software requirements analysis involves gathering, analyzing, documenting, and validating requirements to ensure they are clear, complete, consistent, and testable.",
     steps: [

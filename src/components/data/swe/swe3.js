@@ -13,6 +13,38 @@ export const swe3Data = {
   image: "/static/images/ASPICE-image/swe3.png",
   nextStep: "SWE.4",
   workflow: {
+    title: "Software Detailed Design and Unit Construction Workflow",
+    cards: [
+      {
+        id: 1,
+        title: "Detailed Design Specification",
+        description:
+          "Create detailed designs for each software unit (classes, functions)",
+      },
+      {
+        id: 2,
+        title: "Unit Construction",
+        description:
+          "Implement software units following coding standards and guidelines",
+      },
+      {
+        id: 3,
+        title: "Code Review",
+        description:
+          "Conduct peer reviews to ensure code quality and standards compliance",
+      },
+      {
+        id: 4,
+        title: "Static Analysis",
+        description:
+          "Perform static code analysis for quality metrics and defect detection",
+      },
+      {
+        id: 5,
+        title: "Unit Verification Preparation",
+        description: "Develop unit test specifications and test cases",
+      },
+    ],
     description:
       "The process of refining the architectural components into a precise, implementable design and subsequently constructing (coding) the software units.",
     steps: [
